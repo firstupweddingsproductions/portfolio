@@ -35,21 +35,52 @@ const attrs = isLink
 
 <li>
   <Tag
-    class="work-row group flex w-full items-baseline justify-between gap-6 border-b border-ink-line py-5 text-left"
+    class="group flex w-full items-center gap-4 border-b border-ink-line py-4 text-left sm:gap-6"
     data-project
     data-category={project.category}
     data-featured={project.featured ? 'true' : 'false'}
-    data-thumb={project.thumbnail ?? ''}
-    data-initials={initials}
     {...attrs}
   >
-    <span
-      class="font-heading text-2xl font-semibold leading-tight text-paper transition-all duration-300 group-hover:translate-x-1.5 group-hover:text-amber-bright sm:text-[28px]"
-    >
-      {project.title}{isLink ? ' ↗' : ''}
-    </span>
-    <span class="shrink-0 pt-1 text-right text-sm text-fog">
-      <span class="hidden sm:inline">{role} · </span>{project.year}
-    </span>
+    <!-- Thumbnail (always visible) -->
+    <div class="relative aspect-video w-[116px] shrink-0 overflow-hidden rounded-md border border-ink-line bg-ink-soft sm:w-[188px]">
+      {
+        project.thumbnail ? (
+          <img
+            src={project.thumbnail}
+            alt={project.title}
+            loading="lazy"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div class="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_30%_20%,#1a1a1a,#0c0c0c)]">
+            <span class="select-none font-heading text-3xl font-bold text-ink-line sm:text-4xl">{initials}</span>
+          </div>
+        )
+      }
+      <!-- hover affordance -->
+      <div class="absolute inset-0 flex items-center justify-center bg-ink/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-amber text-ink">
+          {
+            isLink ? (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-0.5 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            )
+          }
+        </span>
+      </div>
+    </div>
+
+    <!-- Title + meta -->
+    <div class="min-w-0 flex-1">
+      <h3 class="font-heading text-xl font-semibold leading-tight text-paper transition-colors group-hover:text-amber-bright sm:text-2xl">
+        {project.title}{isLink ? ' ↗' : ''}
+      </h3>
+      <p class="mt-1.5 text-sm text-fog">{role} · {project.year}</p>
+    </div>
   </Tag>
 </li>

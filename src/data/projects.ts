@@ -227,6 +227,32 @@ export const PROJECTS: Project[] = [
     link: 'https://firstupproductions.de',
   },
   {
+    slug: 'smart-blindenstock',
+    title: 'Smarter Blindenstock (3D-Druck)',
+    category: 'weiteres',
+    year: '2024',
+    role: { de: '3D-Druck · Programmierung · Sensorik', en: '3D Printing · Programming · Sensors' },
+    description: {
+      de: 'Studienprojekt: ein 3D-gedruckter, smart programmierter Blindenstock mit Sensorik zur Hinderniserkennung und Feedback.',
+      en: 'University project: a 3D-printed, smart-programmed white cane with sensors for obstacle detection and feedback.',
+    },
+    video: { type: 'none' },
+    // thumbnail: '/thumbs/blindenstock.jpg',
+  },
+  {
+    slug: 'vr-spielprojekt',
+    title: 'VR-Spielprojekt',
+    category: 'weiteres',
+    year: '2023',
+    role: { de: 'Game Design · VR · 3D', en: 'Game Design · VR · 3D' },
+    description: {
+      de: 'Interaktives VR-Spielprojekt aus dem Studium — Konzeption, 3D-Umgebung und Interaktionsdesign.',
+      en: 'Interactive VR game project from university — concept, 3D environment and interaction design.',
+    },
+    video: { type: 'none' },
+    // thumbnail: '/thumbs/vr.jpg',
+  },
+  {
     slug: 'bachelorthesis-dune',
     title: 'Bachelorthesis — Set-Design in Dune',
     category: 'weiteres',
