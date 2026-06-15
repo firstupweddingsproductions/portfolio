@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import WorkGrid from '../../components/WorkGrid.astro';
+const lang = 'en';
+---
+
+<Layout title="Work" lang={lang}>
+  <div class="px-6 pt-10 md:px-10 lg:px-14 lg:pt-16">
+    <section class="reveal max-w-3xl">
+      <p class="mb-4 text-xs uppercase tracking-[0.25em] text-amber">Portfolio</p>
+      <h1 class="font-heading text-4xl font-bold leading-[1.02] tracking-tightish text-paper sm:text-5xl lg:text-6xl">
+        Film, video &<br /><span class="text-amber-bright">visual storytelling</span>.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-fog">
+        I'm Adem — a media engineer and filmmaker based in Kiel, Germany. From concept through camera to
+        the edit: I tell stories that stick.
+      </p>
+    </section>
+
+    <div class="mt-12 lg:mt-16">
+      <WorkGrid lang={lang} />
+    </div>
+  </div>
+</Layout>

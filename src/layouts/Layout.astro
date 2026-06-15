@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import Sidebar from '../components/Sidebar.astro';
+import Footer from '../components/Footer.astro';
+import VideoLightbox from '../components/VideoLightbox.astro';
+import { detectLang, getAlternateLocaleUrl, type Lang } from '../i18n/routes';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  lang?: Lang;
+}
+
+const detected = detectLang(Astro.url.pathname);
+
+const {
+  title,
+  description = detected === 'en'
+    ? 'Adem Kocyigit — film, video and visual work. Director, editor and media engineer based in Kiel, Germany.'
+    : 'Adem Kocyigit — Film, Video und visuelle Arbeiten. Regie, Schnitt und Medieningenieur aus Kiel.',
+  ogImage = '/og.jpg',
+  lang = detected,
+} = Astro.props;
+
+const fullTitle = `${title} — Adem Kocyigit`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const alternatePath = getAlternateLocaleUrl(Astro.url.pathname, lang);
+const alternateURL = new URL(alternatePath, Astro.site).toString();
+const ogImageURL = new URL(ogImage, Astro.site).toString();
+const ogLocale = lang === 'en' ? 'en_US' : 'de_DE';
+const ogLocaleAlt = lang === 'en' ? 'de_DE' : 'en_US';
+const otherLang: Lang = lang === 'de' ? 'en' : 'de';
+const defaultURL = lang === 'de' ? canonicalURL : alternateURL;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang={lang} href={canonicalURL} />
+    <link rel="alternate" hreflang={otherLang} href={alternateURL} />
+    <link rel="alternate" hreflang="x-default" href={defaultURL} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
+    <meta property="og:site_name" content="Adem Kocyigit" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>{fullTitle}</title>
+  </head>
+  <body class="min-h-screen">
+    <Sidebar lang={lang} />
+    <div class="flex min-h-screen flex-col pt-16 lg:ml-[300px] lg:pt-0">
+      <main class="flex-1 w-full">
+        <slot />
+      </main>
+      <Footer lang={lang} />
+    </div>
+    <VideoLightbox lang={lang} />
+  </body>
+</html>

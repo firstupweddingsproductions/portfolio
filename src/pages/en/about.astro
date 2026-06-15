@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { routes } from '../../i18n/routes';
+const lang = 'en';
+const contact = routes[lang].kontakt;
+
+const skills = [
+  'Premiere Pro', 'After Effects', 'Audition', 'Color Grading',
+  'Photoshop', 'Lightroom', 'Illustrator', 'InDesign',
+  'Directing & Writing', 'Camera', 'Motion Design', 'Git',
+];
+const languages = [
+  { l: 'German', lvl: 'native' },
+  { l: 'English', lvl: 'fluent' },
+  { l: 'Turkish', lvl: 'fluent' },
+  { l: 'Spanish', lvl: 'basic' },
+  { l: 'French', lvl: 'basic' },
+];
+---
+
+<Layout title="About" lang={lang}>
+  <div class="px-6 pt-10 md:px-10 lg:px-14 lg:pt-16">
+    <div class="max-w-3xl">
+      <p class="reveal mb-4 text-xs uppercase tracking-[0.25em] text-amber">About</p>
+      <h1 class="reveal font-heading text-4xl font-bold leading-tight tracking-tightish text-paper sm:text-5xl">
+        Telling stories — <span class="text-amber-bright">in any format</span>.
+      </h1>
+
+      <div class="mt-8 space-y-5 text-[17px] leading-relaxed text-fog">
+        <p>
+          I'm <span class="text-paper">Adem Kocyigit</span>, a recently graduated media engineer
+          (B.Eng., HAW Kiel) based in Kiel, Germany — with a clear focus on video, film and visual
+          storytelling. Camera, editing, motion or concept: I love the whole journey from the first idea
+          to the finished image.
+        </p>
+        <p>
+          I gained hands-on experience as a <span class="text-paper">working student at Dataport AöR</span>,
+          where I conceived, shot and finished corporate, learning and project videos — including motion
+          design, subtitling, color and platform-ready exports, in close coordination with various
+          stakeholders.
+        </p>
+        <p>
+          Alongside that I'm building my own brands: <span class="text-paper">First Up Weddings</span> for
+          cinematic wedding and event films, and <span class="text-paper">First Up Productions</span> for
+          corporate content. Here I own every step — from planning and camera to sound, editing and the
+          color look.
+        </p>
+        <p>
+          Film is where my heart is: I write, direct and edit my own short films. A recent horror short was
+          submitted to festivals in 2026. My bachelor's thesis explored architectural
+          <span class="text-paper"> set design in Dune and Dune: Part Two</span> — a topic that sums up my
+          fascination with visual worlds.
+        </p>
+        <p>
+          My goal: to break into film- and production-related roles — and, long term, my own cinematic
+          projects as well as a possible master's or film-school application.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-14 grid max-w-4xl gap-10 sm:grid-cols-2">
+      <div>
+        <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-fog">Tools & Skills</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {skills.map((s) => (
+            <li class="rounded-full border border-ink-line bg-ink-soft px-3 py-1.5 text-sm text-paper">{s}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-fog">Languages</h2>
+        <ul class="mt-4 space-y-2.5">
+          {languages.map((x) => (
+            <li class="flex items-baseline justify-between border-b border-ink-line pb-2 text-sm">
+              <span class="text-paper">{x.l}</span>
+              <span class="text-fog">{x.lvl}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 max-w-3xl rounded-lg border border-ink-line bg-ink-soft p-8">
+      <h2 class="font-heading text-xl font-semibold text-paper">Currently looking for</h2>
+      <p class="mt-3 text-fog">
+        A first role in video production, content creation, editing, camera or visual storytelling — open
+        to full-time positions, projects and collaborations.
+      </p>
+      <a
+        href={contact}
+        class="mt-6 inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-amber-bright"
+      >
+        Get in touch →
+      </a>
+    </div>
+  </div>
+</Layout>

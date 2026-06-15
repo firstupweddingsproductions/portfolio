@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { routes } from '../i18n/routes';
+const lang = 'de';
+const contact = routes[lang].kontakt;
+
+const skills = [
+  'Premiere Pro', 'After Effects', 'Audition', 'Color Grading',
+  'Photoshop', 'Lightroom', 'Illustrator', 'InDesign',
+  'Regie & Drehbuch', 'Kamera', 'Motion Design', 'Git',
+];
+const languages = [
+  { l: 'Deutsch', lvl: 'Muttersprache' },
+  { l: 'Englisch', lvl: 'fließend' },
+  { l: 'Türkisch', lvl: 'fließend' },
+  { l: 'Spanisch', lvl: 'Grundkenntnisse' },
+  { l: 'Französisch', lvl: 'Grundkenntnisse' },
+];
+---
+
+<Layout title="Über mich" lang={lang}>
+  <div class="px-6 pt-10 md:px-10 lg:px-14 lg:pt-16">
+    <div class="max-w-3xl">
+      <p class="reveal mb-4 text-xs uppercase tracking-[0.25em] text-amber">Über mich</p>
+      <h1 class="reveal font-heading text-4xl font-bold leading-tight tracking-tightish text-paper sm:text-5xl">
+        Geschichten erzählen — <span class="text-amber-bright">in jedem Format</span>.
+      </h1>
+
+      <div class="mt-8 space-y-5 text-[17px] leading-relaxed text-fog">
+        <p>
+          Ich bin <span class="text-paper">Adem Kocyigit</span>, frisch graduierter Medieningenieur
+          (B.Eng., HAW Kiel) aus Kiel — mit einem klaren Fokus auf Video, Film und visuelles Erzählen.
+          Ob Kamera, Schnitt, Motion oder Konzept: Mich begeistert der ganze Weg von der ersten Idee bis
+          zum fertigen Bild.
+        </p>
+        <p>
+          Praktische Erfahrung habe ich als <span class="text-paper">Werkstudent bei Dataport AöR</span>
+          gesammelt, wo ich Corporate-, Lern- und Projektvideos konzipiert, gedreht und in der
+          Postproduktion fertiggestellt habe — inklusive Motion Design, Untertitelung, Color und
+          plattformgerechtem Export, in enger Abstimmung mit verschiedenen Stakeholdern.
+        </p>
+        <p>
+          Parallel baue ich meine eigenen Marken auf: <span class="text-paper">First Up Weddings</span>
+          für cinematische Hochzeits- und Eventfilme und <span class="text-paper">First Up Productions</span>
+          für Unternehmenscontent. Hier verantworte ich alles selbst — von Planung und Kamera über Ton und
+          Schnitt bis zum Farblook.
+        </p>
+        <p>
+          Mein Herz schlägt für den Film: Ich schreibe, inszeniere und schneide eigene Kurzfilme. Ein
+          aktueller Horror-Kurzfilm ist 2026 bei Festivals eingereicht. In meiner Bachelorthesis habe ich
+          mich mit dem architektonischen <span class="text-paper">Set-Design in Dune und Dune: Part Two</span>
+          beschäftigt — ein Thema, das meine Faszination für visuelle Welten gut zusammenfasst.
+        </p>
+        <p>
+          Mein Ziel: der Einstieg in film- und produktionsnahe Rollen — und langfristig eigene filmische
+          Projekte sowie eine mögliche Master- bzw. Filmschulbewerbung.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-14 grid max-w-4xl gap-10 sm:grid-cols-2">
+      <div>
+        <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-fog">Werkzeuge & Fähigkeiten</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {skills.map((s) => (
+            <li class="rounded-full border border-ink-line bg-ink-soft px-3 py-1.5 text-sm text-paper">{s}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-fog">Sprachen</h2>
+        <ul class="mt-4 space-y-2.5">
+          {languages.map((x) => (
+            <li class="flex items-baseline justify-between border-b border-ink-line pb-2 text-sm">
+              <span class="text-paper">{x.l}</span>
+              <span class="text-fog">{x.lvl}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 max-w-3xl rounded-lg border border-ink-line bg-ink-soft p-8">
+      <h2 class="font-heading text-xl font-semibold text-paper">Aktuell auf der Suche nach</h2>
+      <p class="mt-3 text-fog">
+        Festeinstieg in Videoproduktion, Content Creation, Schnitt, Kamera oder visuellem Storytelling —
+        offen für Festanstellung, Projekte und Kollaborationen.
+      </p>
+      <a
+        href={contact}
+        class="mt-6 inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-amber-bright"
+      >
+        Kontakt aufnehmen →
+      </a>
+    </div>
+  </div>
+</Layout>

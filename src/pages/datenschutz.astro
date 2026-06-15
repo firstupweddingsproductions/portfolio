@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+const lang = 'de';
+---
+
+<Layout title="Datenschutz" lang={lang}>
+  <div class="px-6 pt-10 md:px-10 lg:px-14 lg:pt-16">
+    <div class="max-w-2xl">
+      <h1 class="font-heading text-3xl font-bold tracking-tightish text-paper sm:text-4xl">Datenschutzerklärung</h1>
+
+      <div class="mt-8 space-y-8 text-[15px] leading-relaxed text-fog">
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">1. Verantwortlicher</h2>
+          <p class="mt-3">
+            Adem Kocyigit, Tiefe Allee 33, 24149 Kiel · E-Mail: 0406adem@gmail.com
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">2. Hosting & Server-Logfiles</h2>
+          <p class="mt-3">
+            Diese Website wird statisch ausgeliefert (z. B. über Cloudflare Pages). Beim Aufruf werden
+            durch den Hoster technisch notwendige Daten in Server-Logfiles verarbeitet (u. a. IP-Adresse,
+            Datum/Uhrzeit, abgerufene Seite, Browsertyp). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
+            (berechtigtes Interesse an einem sicheren, stabilen Betrieb).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">3. Cookies & Tracking</h2>
+          <p class="mt-3">
+            Diese Website setzt von sich aus keine Cookies und nutzt kein Analyse- oder Tracking-Tool.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">4. Eingebettete Videos (Vimeo / Google Drive)</h2>
+          <p class="mt-3">
+            Videos werden erst nach einem aktiven Klick auf „Ansehen“ geladen. Beim Abspielen werden Inhalte
+            von Drittanbietern (Vimeo bzw. Google) nachgeladen; dabei kann u. a. Ihre IP-Adresse an diese
+            Anbieter übertragen werden. Es gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
+            Vor dem Klick findet keine Übertragung an diese Dienste statt.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">5. Kontaktaufnahme</h2>
+          <p class="mt-3">
+            Wenn Sie mich per E-Mail oder Telefon kontaktieren, werden Ihre Angaben zur Bearbeitung der
+            Anfrage verarbeitet (Art. 6 Abs. 1 lit. b bzw. f DSGVO) und nicht ohne Ihre Einwilligung
+            weitergegeben.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">6. Ihre Rechte</h2>
+          <p class="mt-3">
+            Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
+            Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer Aufsichtsbehörde.
+          </p>
+        </section>
+
+        <p class="border-t border-ink-line pt-6 text-xs text-fog/70">
+          Hinweis: Diese Datenschutzerklärung ist eine an dieses Projekt angepasste Vorlage und sollte vor
+          dem Live-Gang rechtlich geprüft werden.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

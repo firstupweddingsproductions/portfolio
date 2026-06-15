@@ -1,0 +1,45 @@
+---
+import { PROJECTS, type Lang } from '../data/projects';
+import WorkCard from './WorkCard.astro';
+import { t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<section aria-label={t(lang, 'nav.work')}>
+  <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
+    {PROJECTS.map((p) => <WorkCard project={p} lang={lang} />)}
+  </div>
+  <p id="work-empty" class="hidden py-24 text-center text-fog">{t(lang, 'work.empty')}</p>
+</section>
+
+<script>
+  const VALID = ['all', 'featured', 'film', 'corporate', 'interviews', 'visuelle', 'weiteres'];
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-project]'));
+  const links = Array.from(document.querySelectorAll<HTMLElement>('[data-filter]'));
+  const empty = document.getElementById('work-empty');
+
+  function currentFilter(): string {
+    const h = (location.hash || '').replace('#', '');
+    return VALID.includes(h) ? h : 'featured';
+  }
+
+  function apply(f: string) {
+    let shown = 0;
+    cards.forEach((c) => {
+      const cat = c.getAttribute('data-category');
+      const feat = c.getAttribute('data-featured') === 'true';
+      const show = f === 'all' ? true : f === 'featured' ? feat : cat === f;
+      c.classList.toggle('hidden', !show);
+      if (show) shown++;
+    });
+    links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('data-filter') === f));
+    if (empty) empty.classList.toggle('hidden', shown !== 0);
+  }
+
+  apply(currentFilter());
+  window.addEventListener('hashchange', () => apply(currentFilter()));
+</script>

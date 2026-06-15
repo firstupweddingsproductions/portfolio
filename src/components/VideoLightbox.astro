@@ -1,0 +1,107 @@
+---
+import { t } from '../i18n/ui';
+import type { Lang } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const closeLabel = t(lang, 'lightbox.close');
+const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kürze.';
+---
+
+<div
+  id="lightbox"
+  class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-8"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Video"
+>
+  <div data-lb-close class="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
+
+  <div class="relative z-10 w-full max-w-5xl">
+    <button
+      data-lb-close
+      aria-label={closeLabel}
+      class="absolute -top-9 right-0 flex items-center gap-1.5 text-sm text-paper/80 transition-colors hover:text-amber-bright"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+      </svg>
+      {closeLabel}
+    </button>
+
+    <div class="relative aspect-video w-full overflow-hidden rounded-lg border border-ink-line bg-ink-soft shadow-2xl">
+      <iframe
+        id="lb-frame"
+        class="absolute inset-0 hidden h-full w-full"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="Video player"></iframe>
+
+      <div id="lb-soon" class="absolute inset-0 hidden flex-col items-center justify-center gap-3 px-6 text-center">
+        <span class="flex h-16 w-16 items-center justify-center rounded-full bg-amber/15">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-amber-bright" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </span>
+        <p id="lb-soon-title" class="font-heading text-xl text-paper"></p>
+        <p class="text-sm text-fog">{soonText}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const frame = document.getElementById('lb-frame') as HTMLIFrameElement | null;
+  const soon = document.getElementById('lb-soon');
+  const soonTitle = document.getElementById('lb-soon-title');
+
+  function srcFor(type: string | null, id: string | null): string {
+    if (!id) return '';
+    if (type === 'vimeo') return `https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0`;
+    if (type === 'drive') return `https://drive.google.com/file/d/${id}/preview`;
+    return '';
+  }
+
+  function open(type: string | null, id: string | null, title: string | null) {
+    if (!lb || !frame || !soon) return;
+    const src = srcFor(type, id);
+    if (!src) {
+      frame.classList.add('hidden');
+      frame.src = '';
+      if (soonTitle) soonTitle.textContent = title || '';
+      soon.classList.remove('hidden');
+      soon.classList.add('flex');
+    } else {
+      soon.classList.add('hidden');
+      soon.classList.remove('flex');
+      frame.src = src;
+      frame.classList.remove('hidden');
+    }
+    lb.classList.remove('hidden');
+    lb.classList.add('flex');
+    document.body.classList.add('lightbox-open');
+  }
+
+  function close() {
+    if (!lb || !frame) return;
+    lb.classList.add('hidden');
+    lb.classList.remove('flex');
+    frame.src = ''; // stop playback
+    document.body.classList.remove('lightbox-open');
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-video]').forEach((el) => {
+    el.addEventListener('click', () =>
+      open(el.getAttribute('data-video-type'), el.getAttribute('data-video-id'), el.getAttribute('data-title'))
+    );
+  });
+
+  lb?.querySelectorAll('[data-lb-close]').forEach((b) => b.addEventListener('click', close));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+</script>

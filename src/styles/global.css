@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f5f3ef;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+::selection {
+  background: #b88917;
+  color: #0a0a0a;
+}
+
+/* Thin, on-brand scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1f1f1f #0a0a0a;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+*::-webkit-scrollbar-thumb {
+  background: #1f1f1f;
+  border-radius: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a;
+}
+
+/* Reveal-on-load (respects reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: reveal 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Lock scroll when the video lightbox is open */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+@layer components {
+  /* Sidebar navigation links + filter links */
+  .nav-link {
+    @apply block text-fog transition-colors duration-200;
+  }
+  .nav-link:hover {
+    @apply text-paper;
+  }
+  .nav-link.is-active {
+    color: #d8a52a; /* amber-bright */
+  }
+}

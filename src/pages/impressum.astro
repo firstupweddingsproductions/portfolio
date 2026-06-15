@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+const lang = 'de';
+---
+
+<Layout title="Impressum" lang={lang}>
+  <div class="px-6 pt-10 md:px-10 lg:px-14 lg:pt-16">
+    <div class="max-w-2xl">
+      <h1 class="font-heading text-3xl font-bold tracking-tightish text-paper sm:text-4xl">Impressum</h1>
+
+      <div class="mt-8 space-y-8 text-[15px] leading-relaxed text-fog">
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">Angaben gemäß § 5 DDG</h2>
+          <p class="mt-3">
+            Adem Kocyigit<br />
+            Tiefe Allee 33<br />
+            24149 Kiel<br />
+            Deutschland
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">Kontakt</h2>
+          <p class="mt-3">
+            Telefon: +49 173 2118910<br />
+            E-Mail: 0406adem@gmail.com
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">
+            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
+          </h2>
+          <p class="mt-3">Adem Kocyigit (Anschrift wie oben)</p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">Hinweis</h2>
+          <p class="mt-3">
+            Dies ist ein privates Portfolio zu beruflichen Zwecken (Bewerbung und Referenz). Eine
+            gewerbliche Tätigkeit besteht über diese Seite derzeit nicht.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">Haftung für Inhalte & Links</h2>
+          <p class="mt-3">
+            Die Inhalte dieser Seiten wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit,
+            Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Für
+            Inhalte externer Links sind ausschließlich deren Betreiber verantwortlich.
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
