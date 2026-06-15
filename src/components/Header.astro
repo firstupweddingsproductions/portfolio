@@ -1,0 +1,101 @@
+---
+import { routes, getAlternateLocaleUrl, type Lang } from '../i18n/routes';
+import { t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const path = Astro.url.pathname;
+const norm = path.replace(/\/+$/, '') || '/';
+const home = routes[lang].home;
+const about = routes[lang]['ueber-mich'];
+const contact = routes[lang].kontakt;
+const alternateHref = getAlternateLocaleUrl(path, lang);
+
+function isActive(href: string): boolean {
+  const target = href.replace(/\/+$/, '') || '/';
+  return norm === target;
+}
+const onHome = isActive(home);
+---
+
+<header class="fixed inset-x-0 top-0 z-40 border-b border-ink-line bg-ink/85 backdrop-blur">
+  <div class="mx-auto grid max-w-5xl grid-cols-2 items-center gap-4 px-6 py-4 md:px-8 lg:grid-cols-3">
+    <!-- Left (desktop): work / index -->
+    <div class="hidden lg:block">
+      <a href={home} class:list={['nav-link inline-block text-sm', onHome && 'is-active']}>{t(lang, 'nav.work')}</a>
+    </div>
+
+    <!-- Center: name -->
+    <a
+      href={home}
+      class="justify-self-start font-heading text-sm font-bold tracking-[0.18em] text-paper transition-colors hover:text-amber-bright lg:justify-self-center"
+    >
+      ADEM KOCYIGIT
+    </a>
+
+    <!-- Right (desktop): pages + language -->
+    <nav class="hidden items-center justify-end gap-6 text-sm lg:flex">
+      <a href={about} class:list={['nav-link', isActive(about) && 'is-active']}>{t(lang, 'nav.about')}</a>
+      <a href={contact} class:list={['nav-link', isActive(contact) && 'is-active']}>{t(lang, 'nav.contact')}</a>
+      <span class="flex items-center gap-2 text-xs tracking-wider" aria-label={t(lang, 'lang.aria')}>
+        {
+          lang === 'de' ? (
+            <>
+              <span class="text-amber-bright" aria-current="true">DE</span>
+              <span class="text-fog/40">/</span>
+              <a href={alternateHref} class="nav-link inline">EN</a>
+            </>
+          ) : (
+            <>
+              <a href={alternateHref} class="nav-link inline">DE</a>
+              <span class="text-fog/40">/</span>
+              <span class="text-amber-bright" aria-current="true">EN</span>
+            </>
+          )
+        }
+      </span>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button id="nav-btn" class="justify-self-end p-1 text-paper lg:hidden" aria-label={t(lang, 'mobile.menu')}>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="nav-menu" class="hidden border-t border-ink-line bg-ink px-6 py-5 lg:hidden">
+    <ul class="space-y-4 text-sm">
+      <li><a href={home} class:list={['nav-link', onHome && 'is-active']}>{t(lang, 'nav.work')}</a></li>
+      <li><a href={about} class:list={['nav-link', isActive(about) && 'is-active']}>{t(lang, 'nav.about')}</a></li>
+      <li><a href={contact} class:list={['nav-link', isActive(contact) && 'is-active']}>{t(lang, 'nav.contact')}</a></li>
+      <li class="flex items-center gap-2 pt-1 text-xs tracking-wider">
+        {
+          lang === 'de' ? (
+            <>
+              <span class="text-amber-bright">DE</span>
+              <span class="text-fog/40">/</span>
+              <a href={alternateHref} class="nav-link inline">EN</a>
+            </>
+          ) : (
+            <>
+              <a href={alternateHref} class="nav-link inline">DE</a>
+              <span class="text-fog/40">/</span>
+              <span class="text-amber-bright">EN</span>
+            </>
+          )
+        }
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('nav-btn');
+  const menu = document.getElementById('nav-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

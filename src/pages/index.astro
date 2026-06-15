@@ -1,18 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FilterBar from '../components/FilterBar.astro';
 import WorkList from '../components/WorkList.astro';
 const lang = 'de';
 ---
 
 <Layout title="Arbeiten" lang={lang}>
-  <div class="px-6 pt-10 md:px-10 lg:px-14 lg:pt-16">
-    <section class="reveal mb-12 max-w-2xl">
-      <p class="mb-3 text-xs uppercase tracking-[0.25em] text-amber">Portfolio</p>
-      <h1 class="font-heading text-2xl font-medium leading-snug tracking-tightish text-paper sm:text-3xl">
-        Film, Video & visuelles Erzählen — von Konzept bis Schnitt.
-      </h1>
-    </section>
+  <section class="reveal mb-10 max-w-2xl">
+    <p class="mb-3 text-xs uppercase tracking-[0.25em] text-amber">Portfolio</p>
+    <h1 class="font-heading text-2xl font-medium leading-snug tracking-tightish text-paper sm:text-3xl">
+      Film, Video & visuelles Erzählen — von Konzept bis Schnitt.
+    </h1>
+  </section>
 
-    <WorkList lang={lang} />
-  </div>
+  <FilterBar lang={lang} />
+  <WorkList lang={lang} />
 </Layout>

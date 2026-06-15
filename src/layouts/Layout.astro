@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Sidebar from '../components/Sidebar.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import VideoLightbox from '../components/VideoLightbox.astro';
 import { detectLang, getAlternateLocaleUrl, type Lang } from '../i18n/routes';
@@ -75,14 +75,12 @@ const defaultURL = lang === 'de' ? canonicalURL : alternateURL;
     />
     <title>{fullTitle}</title>
   </head>
-  <body class="min-h-screen">
-    <Sidebar lang={lang} />
-    <div class="flex min-h-screen flex-col pt-16 lg:ml-[300px] lg:pt-0">
-      <main class="flex-1 w-full">
-        <slot />
-      </main>
-      <Footer lang={lang} />
-    </div>
+  <body class="flex min-h-screen flex-col">
+    <Header lang={lang} />
+    <main class="mx-auto w-full max-w-5xl flex-1 px-6 pb-20 pt-28 md:px-8 md:pt-32">
+      <slot />
+    </main>
+    <Footer lang={lang} />
     <VideoLightbox lang={lang} />
   </body>
 </html>

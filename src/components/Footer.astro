@@ -9,14 +9,18 @@ const { lang } = Astro.props;
 const year = new Date().getFullYear();
 const impressum = routes[lang].impressum;
 const datenschutz = routes[lang].datenschutz;
+const email = '0406adem@gmail.com';
+const linkedin = 'https://www.linkedin.com/in/adem-kocyigit';
 ---
 
-<footer class="mt-24 border-t border-ink-line px-6 py-8 md:px-10 lg:px-14">
-  <div class="flex flex-col items-start justify-between gap-4 text-xs text-fog sm:flex-row sm:items-center">
-    <div>© {year} Adem Kocyigit · {t(lang, 'footer.loc')}</div>
-    <div class="flex items-center gap-5">
+<footer class="border-t border-ink-line px-6 py-10 md:px-8">
+  <div class="mx-auto flex max-w-5xl flex-col gap-6 text-xs text-fog sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+      <a href={`mailto:${email}`} class="transition-colors hover:text-paper">{email}</a>
+      <a href={linkedin} target="_blank" rel="noopener" class="transition-colors hover:text-paper">LinkedIn ↗</a>
       <a href={impressum} class="transition-colors hover:text-paper">{t(lang, 'legal.impressum')}</a>
       <a href={datenschutz} class="transition-colors hover:text-paper">{t(lang, 'legal.datenschutz')}</a>
     </div>
+    <div>© {year} Adem Kocyigit · {t(lang, 'footer.loc')}</div>
   </div>
 </footer>

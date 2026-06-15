@@ -1,0 +1,27 @@
+---
+import { routes, type Lang } from '../i18n/routes';
+import { CATEGORIES, catLabel } from '../data/projects';
+import { t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const home = routes[lang].home;
+---
+
+<nav
+  aria-label={t(lang, 'nav.work')}
+  class="mb-12 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-ink-line pb-5 text-sm"
+>
+  <a class="nav-link" data-filter="featured" href={`${home}#featured`}>{t(lang, 'filter.featured')}</a>
+  <a class="nav-link" data-filter="all" href={`${home}#all`}>{t(lang, 'filter.all')}</a>
+  <span class="text-fog/30" aria-hidden="true">·</span>
+  {
+    CATEGORIES.map((c) => (
+      <a class="nav-link" data-filter={c.key} href={`${home}#${c.key}`}>
+        {catLabel(c, lang)}
+      </a>
+    ))
+  }
+</nav>
