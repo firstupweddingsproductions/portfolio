@@ -1,0 +1,127 @@
+---
+import { PROJECTS, CATEGORIES, catLabel, type Lang } from '../data/projects';
+import WorkRow from './WorkRow.astro';
+import { t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const visibleCats = CATEGORIES.filter((c) => PROJECTS.some((p) => p.category === c.key));
+---
+
+<div id="work" class="relative">
+  {
+    visibleCats.map((cat) => (
+      <section data-section={cat.key} class="work-section mb-12 last:mb-0">
+        <h2 class="mb-2 text-xs uppercase tracking-[0.25em] text-amber">{catLabel(cat, lang)}</h2>
+        <ul class="border-t border-ink-line">
+          {PROJECTS.filter((p) => p.category === cat.key).map((p) => <WorkRow project={p} lang={lang} />)}
+        </ul>
+      </section>
+    ))
+  }
+  <p id="work-empty" class="hidden py-24 text-center text-fog">{t(lang, 'work.empty')}</p>
+</div>
+
+<!-- Cursor-following hover preview (ligthelm-style) -->
+<div
+  id="hover-preview"
+  aria-hidden="true"
+  class="pointer-events-none fixed left-0 top-0 z-30 hidden aspect-video w-[320px] overflow-hidden rounded-lg border border-ink-line bg-ink-soft opacity-0 shadow-2xl transition-opacity duration-200"
+>
+  <img id="hp-img" class="hidden h-full w-full object-cover" alt="" />
+  <div id="hp-ph" class="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_30%_20%,#181818,#0d0d0d)]">
+    <span id="hp-initials" class="select-none font-heading text-5xl font-bold text-ink-line"></span>
+  </div>
+</div>
+
+<script>
+  // ── Category filtering (sections) ───────────────────────────────────────────
+  const VALID = ['all', 'featured', 'film', 'corporate', 'interviews', 'visuelle', 'weiteres'];
+  const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-section]'));
+  const links = Array.from(document.querySelectorAll<HTMLElement>('[data-filter]'));
+  const empty = document.getElementById('work-empty');
+
+  function currentFilter(): string {
+    const h = (location.hash || '').replace('#', '');
+    return VALID.includes(h) ? h : 'featured';
+  }
+
+  function apply(f: string) {
+    let total = 0;
+    sections.forEach((sec) => {
+      const key = sec.getAttribute('data-section');
+      let vis = 0;
+      sec.querySelectorAll<HTMLElement>('[data-project]').forEach((row) => {
+        const feat = row.getAttribute('data-featured') === 'true';
+        const show = f === 'all' ? true : f === 'featured' ? feat : key === f;
+        row.classList.toggle('hidden', !show);
+        if (show) vis++;
+      });
+      sec.classList.toggle('hidden', vis === 0);
+      total += vis;
+    });
+    links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('data-filter') === f));
+    if (empty) empty.classList.toggle('hidden', total !== 0);
+  }
+
+  apply(currentFilter());
+  window.addEventListener('hashchange', () => apply(currentFilter()));
+
+  // ── Cursor-following preview on hover ────────────────────────────────────────
+  const preview = document.getElementById('hover-preview');
+  const hpImg = document.getElementById('hp-img') as HTMLImageElement | null;
+  const hpPh = document.getElementById('hp-ph');
+  const hpInit = document.getElementById('hp-initials');
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (preview && hpImg && hpPh && hpInit && fine) {
+    let cx = 0,
+      cy = 0,
+      raf: number | null = null;
+
+    const place = () => {
+      raf = null;
+      const w = preview.offsetWidth,
+        h = preview.offsetHeight;
+      let x = cx + 24,
+        y = cy + 24;
+      if (x + w > window.innerWidth - 12) x = cx - w - 24;
+      if (y + h > window.innerHeight - 12) y = cy - h - 24;
+      preview.style.transform = `translate(${x}px, ${y}px)`;
+    };
+    const move = (e: MouseEvent) => {
+      cx = e.clientX;
+      cy = e.clientY;
+      if (!raf) raf = requestAnimationFrame(place);
+    };
+    const show = (row: HTMLElement) => {
+      const thumb = row.getAttribute('data-thumb');
+      if (thumb) {
+        hpImg.src = thumb;
+        hpImg.classList.remove('hidden');
+        hpPh.classList.add('hidden');
+      } else {
+        hpImg.classList.add('hidden');
+        hpImg.removeAttribute('src');
+        hpPh.classList.remove('hidden');
+        hpInit.textContent = row.getAttribute('data-initials') || '';
+      }
+      preview.classList.remove('hidden');
+      requestAnimationFrame(() => preview.classList.remove('opacity-0'));
+    };
+    const hide = () => preview.classList.add('opacity-0');
+
+    preview.addEventListener('transitionend', () => {
+      if (preview.classList.contains('opacity-0')) preview.classList.add('hidden');
+    });
+
+    document.querySelectorAll<HTMLElement>('#work [data-project]').forEach((row) => {
+      row.addEventListener('mouseenter', () => show(row));
+      row.addEventListener('mousemove', move);
+      row.addEventListener('mouseleave', hide);
+    });
+  }
+</script>
