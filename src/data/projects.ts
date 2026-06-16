@@ -108,6 +108,7 @@ export const PROJECTS: Project[] = [
       en: 'Original horror short “Glow” — script, camera, directing and post-production.',
     },
     video: { type: 'drive', id: '12BJ6MXDBx1GffQm6svH7jz60543XVGUm' },
+    thumbnail: '/thumbs/glow-horror-kurzfilm.jpg',
   },
   {
     slug: 'nachdreh-spur-des-falken',
