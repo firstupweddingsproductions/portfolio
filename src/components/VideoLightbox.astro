@@ -12,14 +12,14 @@ const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kü
 
 <div
   id="lightbox"
-  class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-8"
+  class="fixed inset-0 z-[100] hidden items-center justify-center overflow-y-auto p-4 py-10 sm:p-8"
   role="dialog"
   aria-modal="true"
   aria-label="Video"
 >
-  <div data-lb-close class="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
+  <div data-lb-close class="fixed inset-0 bg-black/85 backdrop-blur-sm"></div>
 
-  <div class="relative z-10 w-full max-w-5xl">
+  <div class="relative z-10 my-auto w-full max-w-5xl">
     <button
       data-lb-close
       aria-label={closeLabel}
@@ -46,9 +46,18 @@ const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kü
             <path d="M8 5v14l11-7z" />
           </svg>
         </span>
-        <p id="lb-soon-title" class="font-heading text-xl text-paper"></p>
         <p class="text-sm text-fog">{soonText}</p>
       </div>
+    </div>
+
+    <!-- Info panel under the player -->
+    <div id="lb-info" class="mt-5">
+      <div class="flex items-baseline justify-between gap-4">
+        <h3 id="lb-title" class="font-heading text-xl font-semibold text-paper sm:text-2xl"></h3>
+        <span id="lb-year" class="shrink-0 text-sm text-fog"></span>
+      </div>
+      <p id="lb-meta" class="mt-1 text-sm text-amber-bright"></p>
+      <p id="lb-desc" class="mt-3 max-w-3xl text-sm leading-relaxed text-fog"></p>
     </div>
   </div>
 </div>
@@ -57,7 +66,10 @@ const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kü
   const lb = document.getElementById('lightbox');
   const frame = document.getElementById('lb-frame') as HTMLIFrameElement | null;
   const soon = document.getElementById('lb-soon');
-  const soonTitle = document.getElementById('lb-soon-title');
+  const elTitle = document.getElementById('lb-title');
+  const elYear = document.getElementById('lb-year');
+  const elMeta = document.getElementById('lb-meta');
+  const elDesc = document.getElementById('lb-desc');
 
   function srcFor(type: string | null, id: string | null): string {
     if (!id) return '';
@@ -66,13 +78,24 @@ const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kü
     return '';
   }
 
-  function open(type: string | null, id: string | null, title: string | null) {
+  function open(el: HTMLElement) {
     if (!lb || !frame || !soon) return;
-    const src = srcFor(type, id);
+
+    // Info panel
+    const title = el.getAttribute('data-title') || '';
+    const role = el.getAttribute('data-role') || '';
+    const cat = el.getAttribute('data-cat') || '';
+    const desc = el.getAttribute('data-desc') || '';
+    if (elTitle) elTitle.textContent = title;
+    if (elYear) elYear.textContent = el.getAttribute('data-year') || '';
+    if (elMeta) elMeta.textContent = [cat, role].filter(Boolean).join(' · ');
+    if (elDesc) elDesc.textContent = desc;
+
+    // Player
+    const src = srcFor(el.getAttribute('data-video-type'), el.getAttribute('data-video-id'));
     if (!src) {
       frame.classList.add('hidden');
       frame.src = '';
-      if (soonTitle) soonTitle.textContent = title || '';
       soon.classList.remove('hidden');
       soon.classList.add('flex');
     } else {
@@ -81,6 +104,7 @@ const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kü
       frame.src = src;
       frame.classList.remove('hidden');
     }
+
     lb.classList.remove('hidden');
     lb.classList.add('flex');
     document.body.classList.add('lightbox-open');
@@ -95,9 +119,7 @@ const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kü
   }
 
   document.querySelectorAll<HTMLElement>('[data-video]').forEach((el) => {
-    el.addEventListener('click', () =>
-      open(el.getAttribute('data-video-type'), el.getAttribute('data-video-id'), el.getAttribute('data-title'))
-    );
+    el.addEventListener('click', () => open(el));
   });
 
   lb?.querySelectorAll('[data-lb-close]').forEach((b) => b.addEventListener('click', close));

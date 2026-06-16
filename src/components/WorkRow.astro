@@ -1,5 +1,5 @@
 ---
-import { type Project, type Lang } from '../data/projects';
+import { getCategory, catLabel, type Project, type Lang } from '../data/projects';
 interface Props {
   project: Project;
   lang: Lang;
@@ -7,6 +7,8 @@ interface Props {
 const { project, lang } = Astro.props;
 
 const role = project.role[lang];
+const cat = getCategory(project.category);
+const catName = cat ? catLabel(cat, lang) : project.category;
 
 const isExternal = !!project.link;
 const isPdf = !project.link && !!project.pdf;
@@ -35,6 +37,10 @@ const attrs = isAnchor
       'data-video-type': videoType,
       'data-video-id': videoId,
       'data-title': project.title,
+      'data-role': role,
+      'data-year': project.year,
+      'data-cat': catName,
+      'data-desc': project.description[lang],
     };
 ---
 

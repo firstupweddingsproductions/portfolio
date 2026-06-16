@@ -120,6 +120,7 @@ export const PROJECTS: Project[] = [
       en: 'Student exercise / homage (non-commercial): re-shoot of a scene from “The Maltese Falcon” (1941).',
     },
     video: { type: 'drive', id: '1XeZqIZldnDd0p6TU_KutQ8wtVT8bV3WD' },
+    thumbnail: '/thumbs/nachdreh-spur-des-falken.jpg',
   },
 
   // ── Corporate (Drive: "Corporate", 4) ──
@@ -135,6 +136,7 @@ export const PROJECTS: Project[] = [
       en: 'Product presentation for Dataport — concept, camera and post-production.',
     },
     video: { type: 'drive', id: '1iA7N8Bp8I5JEjHMMzFCFPxmOPSod6ca7' },
+    thumbnail: '/thumbs/dataport-produktvorstellung.jpg',
   },
   {
     slug: 'dataport-produktguide',
@@ -147,6 +149,7 @@ export const PROJECTS: Project[] = [
       en: 'Product guide video for Dataport.',
     },
     video: { type: 'drive', id: '1mlSEHJOCDliu8IkDudCAVeZeRY3UftXD' },
+    thumbnail: '/thumbs/dataport-produktguide.jpg',
   },
   {
     slug: 'dataport-produktguide-2',
@@ -159,6 +162,7 @@ export const PROJECTS: Project[] = [
       en: 'Product guide video (part 2) for Dataport.',
     },
     video: { type: 'drive', id: '1d6EVb6CEJCh2kX3fqNzDwiMTippJjoh3' },
+    thumbnail: '/thumbs/dataport-produktguide-2.jpg',
   },
   {
     slug: 'dataport-produktguide-3',
@@ -171,6 +175,7 @@ export const PROJECTS: Project[] = [
       en: 'Product guide video (part 3) for Dataport.',
     },
     video: { type: 'drive', id: '1voK3r9lnJ10NlxuIZj-RvOPNrhb-DWDQ' },
+    thumbnail: '/thumbs/dataport-produktguide-3.jpg',
   },
 
   // ── Interviews & Events (Drive: "Interviews / Event Recaps", 3) ──
@@ -186,6 +191,7 @@ export const PROJECTS: Project[] = [
       en: 'Event recap of a divisional meeting for Dataport.',
     },
     video: { type: 'drive', id: '1yLfcrA17K9wav_HrqMgqj08tfrHJh9Oy' },
+    thumbnail: '/thumbs/dataport-bereichsmeeting-recap.jpg',
   },
   {
     slug: 'dataport-interview-blog',
@@ -198,6 +204,7 @@ export const PROJECTS: Project[] = [
       en: 'Interview format (“Interview Blog”) for Dataport.',
     },
     video: { type: 'drive', id: '1nLwY7j9DH6-bopf_tp4h5zwIMAxvHF4S' },
+    thumbnail: '/thumbs/dataport-interview-blog.jpg',
   },
   {
     slug: 'dataport-hausmesse-recap',
@@ -210,6 +217,7 @@ export const PROJECTS: Project[] = [
       en: 'Recap of the Dataport in-house expo.',
     },
     video: { type: 'drive', id: '1wou9Px-6CCWyXGUXPecRc28RrrmccQfC' },
+    thumbnail: '/thumbs/dataport-hausmesse-recap.jpg',
   },
 
   // ── Visuelle Arbeiten (Drive: "Visuelle Arbeit", 2) ──
