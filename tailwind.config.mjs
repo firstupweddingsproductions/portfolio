@@ -24,7 +24,7 @@ export default {
         fog: '#9A958C',        // muted secondary text
       },
       fontFamily: {
-        heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        heading: ['Agrandir', '"Space Grotesk"', 'system-ui', 'sans-serif'],
         body: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       maxWidth: {

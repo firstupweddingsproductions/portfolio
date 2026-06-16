@@ -215,11 +215,11 @@ export const PROJECTS: Project[] = [
   // ── Visuelle Arbeiten (Drive: "Visuelle Arbeit", 2) ──
   {
     slug: 'verlobung-trailer-ilayda-emin',
-    title: 'Ilayda Nur & Emin Can — Verlobungstrailer',
+    title: 'First Up Weddings — Ilayda & Emin Can',
     category: 'visuelle',
     year: '2025',
     featured: true,
-    role: { de: 'First Up Weddings · Kamera · Schnitt · Farblook', en: 'First Up Weddings · Camera · Edit · Color' },
+    role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
       de: 'Cinematischer Verlobungs-Trailer für First Up Weddings (meine eigene Hochzeitsfilm-Marke).',
       en: 'Cinematic engagement trailer for First Up Weddings (my own wedding-film brand).',
@@ -228,10 +228,10 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'mustafa-yaren-verlobungstrailer',
-    title: 'Mustafa & Yaren — Verlobungstrailer',
+    title: 'First Up Weddings — Mustafa & Yaren',
     category: 'visuelle',
     year: '2025', // TODO: Jahr prüfen
-    role: { de: 'First Up Weddings · Kamera · Schnitt · Farblook', en: 'First Up Weddings · Camera · Edit · Color' },
+    role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
       de: 'Cinematischer Verlobungs-Trailer für First Up Weddings.',
       en: 'Cinematic engagement trailer for First Up Weddings.',

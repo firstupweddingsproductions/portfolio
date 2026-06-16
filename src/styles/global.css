@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Agrandir — heading font (PangramPangram, commercial). Not on Google Fonts, so
+   self-host the WOFF2 files in public/fonts/. Until they exist, headings fall
+   back to Space Grotesk (see tailwind.config heading stack). */
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
 }

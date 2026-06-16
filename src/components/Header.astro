@@ -22,7 +22,7 @@ const onHome = isActive(home);
 ---
 
 <header class="fixed inset-x-0 top-0 z-40 border-b border-ink-line bg-ink/85 backdrop-blur">
-  <div class="mx-auto grid max-w-[1800px] grid-cols-2 items-center gap-4 px-6 py-4 md:px-10 lg:grid-cols-3 lg:px-14">
+  <div class="mx-auto grid max-w-[1800px] grid-cols-2 items-center gap-4 px-6 py-5 md:px-10 md:py-6 lg:grid-cols-3 lg:px-14">
     <!-- Left (desktop): work / index -->
     <div class="hidden lg:block">
       <a href={home} class:list={['nav-link inline-block text-sm', onHome && 'is-active']}>{t(lang, 'nav.work')}</a>
@@ -31,7 +31,7 @@ const onHome = isActive(home);
     <!-- Center: name -->
     <a
       href={home}
-      class="justify-self-start font-heading text-sm font-bold tracking-[0.18em] text-paper transition-colors hover:text-amber-bright lg:justify-self-center"
+      class="justify-self-start font-heading text-xl font-bold tracking-[0.12em] text-paper transition-colors hover:text-amber-bright sm:text-2xl lg:justify-self-center lg:text-[26px]"
     >
       ADEM KOCYIGIT
     </a>
