@@ -84,12 +84,15 @@ const attrs = isAnchor
       </div>
     </div>
 
-    <!-- Title + meta -->
+    <!-- Title + role -->
     <div class="min-w-0 flex-1">
       <h3 class="font-heading text-xl font-semibold leading-tight text-paper transition-colors group-hover:text-amber-bright sm:text-2xl">
         {project.title}{isExternal ? ' ↗' : ''}
       </h3>
-      <p class="mt-1.5 text-sm text-fog">{role} · {project.year}</p>
+      <p class="mt-1.5 text-sm text-fog">{role}</p>
     </div>
+
+    <!-- Year (far right) -->
+    <span class="shrink-0 text-sm tabular-nums text-fog">{project.year}</span>
   </Tag>
 </li>
