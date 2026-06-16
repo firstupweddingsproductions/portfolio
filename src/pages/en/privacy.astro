@@ -1,66 +1,139 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 const lang = 'en';
+const linkClass = 'text-paper transition-colors hover:text-amber-bright break-words';
+const h2 = 'font-heading text-base font-semibold text-paper';
 ---
 
 <Layout title="Privacy" lang={lang}>
-  <div>
-    <div class="max-w-2xl">
-      <h1 class="font-heading text-3xl font-bold tracking-tightish text-paper sm:text-4xl">Privacy Policy</h1>
+  <div class="max-w-2xl">
+    <p class="mb-4 text-xs uppercase tracking-[0.25em] text-amber">Legal</p>
+    <h1 class="font-heading text-3xl font-bold tracking-tightish text-paper sm:text-4xl">Privacy Policy</h1>
 
-      <div class="mt-8 space-y-8 text-[15px] leading-relaxed text-fog">
-        <section>
-          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">1. Controller</h2>
-          <p class="mt-3">Adem Kocyigit, Tiefe Allee 33, 24149 Kiel · Email: 0406adem@gmail.com</p>
-        </section>
-
-        <section>
-          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">2. Hosting & server logs</h2>
-          <p class="mt-3">
-            This website is served statically (e.g. via Cloudflare Pages). When the site is accessed, the
-            host processes technically necessary data in server log files (incl. IP address, date/time,
-            page requested, browser type). The legal basis is Art. 6(1)(f) GDPR (legitimate interest in
-            secure, stable operation).
-          </p>
-        </section>
-
-        <section>
-          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">3. Cookies & tracking</h2>
-          <p class="mt-3">This website sets no cookies of its own and uses no analytics or tracking tools.</p>
-        </section>
-
-        <section>
-          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">4. Embedded videos (Vimeo / Google Drive)</h2>
-          <p class="mt-3">
-            Videos are only loaded after you actively click “Watch”. On playback, third-party content
-            (Vimeo or Google) is loaded and your IP address, among other data, may be transmitted to these
-            providers. Their respective privacy policies apply. No data is transmitted to these services
-            before you click.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">5. Contacting me</h2>
-          <p class="mt-3">
-            If you contact me by email or phone, your details are processed to handle your request
-            (Art. 6(1)(b)/(f) GDPR) and are not shared without your consent.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-paper">6. Your rights</h2>
-          <p class="mt-3">
-            You have the right to access, rectification, erasure, restriction of processing, data
-            portability and objection, as well as the right to lodge a complaint with a supervisory
-            authority.
-          </p>
-        </section>
-
-        <p class="border-t border-ink-line pt-6 text-xs text-fog/70">
-          Note: This privacy policy is a template adapted to this project and should be legally reviewed
-          before going live.
+    <div class="mt-10 space-y-9 text-[15px] leading-relaxed text-fog">
+      <section>
+        <h2 class={h2}>1. Controller</h2>
+        <p class="mt-3">The controller within the meaning of the General Data Protection Regulation (GDPR) is:</p>
+        <p class="mt-3">
+          Adem Kocyigit<br />
+          Tiefe Allee 33<br />
+          24149 Kiel<br />
+          Germany
         </p>
-      </div>
+        <p class="mt-3">
+          Email: <a href="mailto:0406adem@gmail.com" class={linkClass}>0406adem@gmail.com</a><br />
+          Phone: <a href="tel:+491732118910" class={linkClass}>+49 173 2118910</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class={h2}>2. Hosting</h2>
+        <p class="mt-3">
+          This website is hosted via <strong class="text-paper">Cloudflare Pages</strong> (Cloudflare, Inc.,
+          101 Townsend St, San Francisco, CA 94107, USA). When the site is accessed, technically necessary
+          connection data (e.g. IP address, user agent, date and time) is processed to deliver the content
+          and ensure the security and stability of the service. The legal basis is Art. 6(1)(f) GDPR
+          (legitimate interest in a secure and stable provision of the website). Cloudflare may also process
+          data in the USA; this is safeguarded by Standard Contractual Clauses and the EU-US Data Privacy
+          Framework.
+        </p>
+        <p class="mt-3 text-sm">
+          Cloudflare privacy policy:
+          <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class={linkClass}>https://www.cloudflare.com/privacypolicy/</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class={h2}>3. Server log files</h2>
+        <p class="mt-3">
+          When the website is accessed, the hosting provider automatically records technical data in log
+          files, including the (shortened) IP address, date and time, browser type, referrer URL and amount
+          of data transferred. This data is not merged with other data sources. The legal basis is
+          Art. 6(1)(f) GDPR.
+        </p>
+      </section>
+
+      <section>
+        <h2 class={h2}>4. Email communication (Gmail / Google)</h2>
+        <p class="mt-3">
+          Emails sent directly to me arrive in a Gmail mailbox provided by Google (Google Ireland Limited,
+          Gordon House, Barrow Street, Dublin 4, Ireland). On receipt and storage, technical connection and
+          metadata is processed by Google. Google may also process data in the USA; this is safeguarded by
+          Standard Contractual Clauses and the EU-US Data Privacy Framework.
+        </p>
+        <p class="mt-3">
+          If you contact me by email, your details are processed for the purpose of handling your enquiry and
+          any follow-up questions. I do not share this data without your consent. It is stored for as long as
+          necessary to handle the request; statutory retention obligations remain unaffected. The legal basis
+          is Art. 6(1)(b) and/or (f) GDPR.
+        </p>
+        <p class="mt-3 text-sm">
+          Google privacy policy:
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class={linkClass}>https://policies.google.com/privacy</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class={h2}>5. Cookies and tracking</h2>
+        <p class="mt-3">
+          This website currently sets no tracking cookies of its own and uses no analytics tools. Should
+          cookies or comparable technologies that are not strictly necessary be introduced in future, this
+          will only happen with your explicit consent pursuant to § 25 (1) TDDDG in conjunction with
+          Art. 6(1)(a) GDPR.
+        </p>
+      </section>
+
+      <section>
+        <h2 class={h2}>6. Fonts</h2>
+        <p class="mt-3">
+          The fonts used (Inter and Clash Display) are hosted locally on the website's server (self-hosting).
+          Loading the fonts transfers <strong class="text-paper">no data to third parties</strong> (such as
+          Google Fonts).
+        </p>
+      </section>
+
+      <section>
+        <h2 class={h2}>7. Embedded videos / media services</h2>
+        <p class="mt-3">
+          Video work is only loaded after you actively click the respective preview image and is embedded via
+          external players:
+        </p>
+        <ul class="mt-3 space-y-2">
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> Vimeo (Vimeo, Inc., 330 West 34th Street, New York, NY 10001, USA)</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> Google Drive (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland)</li>
+        </ul>
+        <p class="mt-3">
+          Only on playback is data — including your IP address — transferred to the respective provider; this
+          may involve a transfer to the USA, safeguarded by Standard Contractual Clauses and the EU-US Data
+          Privacy Framework. The providers may set cookies in this context. <strong class="text-paper">No
+          data is transferred to these services before you click.</strong> The legal basis is Art. 6(1)(f)
+          GDPR (legitimate interest in presenting my work samples).
+        </p>
+        <p class="mt-3 text-sm">
+          Vimeo privacy: <a href="https://vimeo.com/privacy" target="_blank" rel="noopener noreferrer" class={linkClass}>https://vimeo.com/privacy</a><br />
+          Google privacy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class={linkClass}>https://policies.google.com/privacy</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class={h2}>8. Your rights</h2>
+        <p class="mt-3">You have the right at any time to:</p>
+        <ul class="mt-3 space-y-2">
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> access to the personal data concerning you (Art. 15 GDPR)</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> rectification of inaccurate data (Art. 16 GDPR)</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> erasure of your data (Art. 17 GDPR)</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> restriction of processing (Art. 18 GDPR)</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> data portability (Art. 20 GDPR)</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> objection to processing (Art. 21 GDPR)</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-amber">—</span> lodge a complaint with a data protection supervisory authority (Art. 77 GDPR)</li>
+        </ul>
+        <p class="mt-3">To exercise your rights, you can contact me at any time using the contact details above.</p>
+      </section>
+
+      <section>
+        <h2 class={h2}>9. Status of this policy</h2>
+        <p class="mt-3">Last updated: June 2026</p>
+      </section>
     </div>
   </div>
 </Layout>
