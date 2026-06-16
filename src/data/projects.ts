@@ -89,115 +89,154 @@ export interface Project {
   pdf?: string; // opens a PDF (project documentation / screenshots) in a new tab
 }
 
-// ─── PLACEHOLDER PROJECTS ────────────────────────────────────────────────────
-// These are real-ish stand-ins based on your CV/Arbeitsproben so you can see the
-// structure. Swap titles / add video ids / thumbnails as the real material lands.
+// ─── PROJECTS ────────────────────────────────────────────────────────────────
+// Film/Corporate/Interviews/Visuelle entries mirror the Google Drive portfolio
+// folder (exact names + counts). Each video file gets its Drive id once available:
+//   video: { type: 'drive', id: '<file-id>' }   ← paste the Drive file id here
+// Until then the id is empty and the player shows a "preview coming soon" panel.
 export const PROJECTS: Project[] = [
-  // ── Kurzfilm ──
+  // ── Kurzfilm (Drive: "Kurzfilme", 2) ──
   {
-    slug: 'horror-kurzfilm',
-    title: 'Horror-Kurzfilm',
+    slug: 'glow-horror-kurzfilm',
+    title: 'Glow — Horror-Kurzfilm',
     category: 'film',
     year: '2026',
     featured: true,
-    role: { de: 'Regie · Drehbuch · Schnitt', en: 'Director · Writer · Editor' },
+    role: { de: 'Drehbuch · Kamera · Regie · Postproduktion', en: 'Script · Camera · Directing · Post' },
     description: {
-      de: 'Eigener Kurzfilm mit Fokus auf Spannung, Timing und Atmosphäre. Festival-Einreichung 2026, Entscheidung ausstehend.',
-      en: 'Original short film focused on suspense, timing and atmosphere. Festival submission 2026, decision pending.',
+      de: 'Eigener Horror-Kurzfilm „Glow" — Drehbuch, Kamera, Regie und Postproduktion.',
+      en: 'Original horror short “Glow” — script, camera, directing and post-production.',
     },
-    video: { type: 'none' }, // TODO: { type: 'vimeo', id: '...' }
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
   {
-    slug: 'comedy-kurzfilm',
-    title: 'Comedy-Kurzfilm',
+    slug: 'nachdreh-spur-des-falken',
+    title: 'Nachdreh: "Die Spur des Falken" (1941)',
     category: 'film',
-    year: '2025',
-    featured: true,
-    role: { de: 'Drehbuch · Regie · Schnitt', en: 'Writer · Director · Editor' },
+    year: '2025', // TODO: Jahr aus Drive prüfen (war im Dateinamen abgeschnitten)
+    role: { de: 'Kamera · Regie · Postproduktion', en: 'Camera · Directing · Post' },
     description: {
-      de: 'Fiktionales Studienprojekt — Figurenführung, komödiantisches Timing und Low-Budget-Produktion im kleinen Team.',
-      en: 'Fictional student project — character work, comedic timing and low-budget production in a small team.',
+      de: 'Kurzfilmprojekt: Nachdreh einer Szene aus „Die Spur des Falken" (1941).',
+      en: 'Short-film project: re-shoot of a scene from “The Maltese Falcon” (1941).',
     },
-    video: { type: 'none' },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
 
-  // ── Corporate ──
+  // ── Corporate (Drive: "Corporate", 4) ──
   {
-    slug: 'dataport-lernvideo',
-    title: 'Dataport — Lernvideo-Reihe',
+    slug: 'dataport-produktvorstellung',
+    title: 'Dataport — Produktvorstellung',
     category: 'corporate',
-    year: '2025',
+    year: '2026',
     featured: true,
-    role: { de: 'Konzept · Schnitt · Motion', en: 'Concept · Edit · Motion' },
+    role: { de: 'Konzeption · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
     description: {
-      de: 'Lern- und Informationsvideos für interne/externe Kommunikation: Konzeption, Schnitt, Motion Design, Untertitel und Export.',
-      en: 'Learning and information videos for internal/external communication: concept, editing, motion design, subtitles and export.',
+      de: 'Produktvorstellung für Dataport — Konzeption, Kamera und Postproduktion.',
+      en: 'Product presentation for Dataport — concept, camera and post-production.',
     },
-    video: { type: 'none' },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
   {
-    slug: 'dataport-projektvideo',
-    title: 'Dataport — Projektvideo',
+    slug: 'dataport-produktguide',
+    title: 'Dataport — Produktguide',
     category: 'corporate',
-    year: '2025',
-    role: { de: 'Drehvorbereitung · Postproduktion', en: 'Pre-production · Post' },
+    year: '2026',
+    role: { de: 'Konzeption · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
     description: {
-      de: 'Projektkommunikation mit Stakeholder-Abstimmung, plattformgerechter Aufbereitung und Qualitätssicherung.',
-      en: 'Project communication with stakeholder alignment, platform-ready delivery and quality assurance.',
+      de: 'Produktguide-Video für Dataport.',
+      en: 'Product guide video for Dataport.',
     },
-    video: { type: 'none' },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+  },
+  {
+    slug: 'dataport-produktguide-2',
+    title: 'Dataport — Produktguide 2',
+    category: 'corporate',
+    year: '2026',
+    role: { de: 'Konzeption · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
+    description: {
+      de: 'Produktguide-Video (Teil 2) für Dataport.',
+      en: 'Product guide video (part 2) for Dataport.',
+    },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+  },
+  {
+    slug: 'dataport-produktguide-3',
+    title: 'Dataport — Produktguide 3',
+    category: 'corporate',
+    year: '2026',
+    role: { de: 'Konzeption · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
+    description: {
+      de: 'Produktguide-Video (Teil 3) für Dataport.',
+      en: 'Product guide video (part 3) for Dataport.',
+    },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
 
-  // ── Interviews & Events ──
+  // ── Interviews & Events (Drive: "Interviews / Event Recaps", 3) ──
   {
-    slug: 'interview-format',
-    title: 'Interview-Format',
+    slug: 'dataport-bereichsmeeting-recap',
+    title: 'Dataport — Bereichsmeeting Recap',
     category: 'interviews',
     year: '2025',
-    role: { de: 'Kamera · Schnitt · Ton', en: 'Camera · Edit · Audio' },
+    featured: true,
+    role: { de: 'Konzept · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
     description: {
-      de: 'Interviewformat mit klarer Storystruktur, natürlichem Schnitt und sauberer Ton- und Bildbearbeitung.',
-      en: 'Interview format with a clear story structure, natural editing and clean audio/picture work.',
+      de: 'Event-Recap eines Bereichsmeetings für Dataport.',
+      en: 'Event recap of a divisional meeting for Dataport.',
     },
-    video: { type: 'none' },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
   {
-    slug: 'event-recap',
-    title: 'Event Recap',
+    slug: 'dataport-interview-blog',
+    title: 'Dataport — Interview Blog',
+    category: 'interviews',
+    year: '2025',
+    role: { de: 'Konzept · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
+    description: {
+      de: 'Interview-Format („Interview Blog") für Dataport.',
+      en: 'Interview format (“Interview Blog”) for Dataport.',
+    },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+  },
+  {
+    slug: 'dataport-hausmesse-recap',
+    title: 'Dataport — Hausmesse Recap',
     category: 'interviews',
     year: '2024',
-    role: { de: 'Kamera · Schnitt', en: 'Camera · Edit' },
+    role: { de: 'Kamera · Postproduktion', en: 'Camera · Post' },
     description: {
-      de: 'Eventzusammenfassung mit dynamischem Schnitt, der die Atmosphäre des Tages einfängt.',
-      en: 'Event recap with a dynamic edit that captures the atmosphere of the day.',
+      de: 'Recap der Dataport-Hausmesse.',
+      en: 'Recap of the Dataport in-house expo.',
     },
-    video: { type: 'none' },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
 
-  // ── Visuelle Arbeiten ──
+  // ── Visuelle Arbeiten (Drive: "Visuelle Arbeit", 2) ──
   {
-    slug: 'social-visuals',
-    title: 'Social-Media-Visuals',
+    slug: 'verlobung-trailer-ilayda-emin',
+    title: 'Ilayda Nur & Emin Can — Verlobungstrailer (4K)',
     category: 'visuelle',
     year: '2025',
-    role: { de: 'Design · Layout', en: 'Design · Layout' },
+    featured: true,
+    role: { de: 'Kamera · Schnitt · Farblook', en: 'Camera · Edit · Color' },
     description: {
-      de: 'Social-Media-Visuals und Layouts — gestalterisches Verständnis und sichere visuelle Content-Aufbereitung.',
-      en: 'Social media visuals and layouts — strong visual sense and confident content design.',
+      de: 'Cinematischer Verlobungs-Trailer (First Up Weddings).',
+      en: 'Cinematic engagement trailer (First Up Weddings).',
     },
-    video: { type: 'none' },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
   {
-    slug: 'motion-reel',
-    title: 'Motion Design Reel',
+    slug: 'a-second-life-trailer',
+    title: 'A Second Life — Trailer',
     category: 'visuelle',
-    year: '2025',
-    role: { de: 'Animation · After Effects', en: 'Animation · After Effects' },
+    year: '2024',
+    role: { de: 'Postproduktion', en: 'Post-production' },
     description: {
-      de: 'Kurzes Motion-Design-Reel: Typografie in Bewegung, Logo-Animation und Transitions.',
-      en: 'Short motion design reel: kinetic typography, logo animation and transitions.',
+      de: 'Trailer-Schnitt „A Second Life".',
+      en: 'Trailer edit “A Second Life”.',
     },
-    video: { type: 'none' },
+    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
 
   // ── Weiteres (web / study / off-niche) ──
