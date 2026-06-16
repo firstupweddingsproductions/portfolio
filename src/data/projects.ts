@@ -234,6 +234,7 @@ export const PROJECTS: Project[] = [
       en: 'Cinematic engagement trailer for First Up Weddings (my own wedding-film brand).',
     },
     video: { type: 'drive', id: '1jx4qZH5h1kL95DwWBBqK_nrJsekVbXvb' },
+    thumbnail: '/thumbs/verlobung-trailer-ilayda-emin.jpg',
   },
   {
     slug: 'mustafa-yaren-verlobungstrailer',
@@ -258,6 +259,7 @@ export const PROJECTS: Project[] = [
       en: 'Trailer edit “A Second Life”.',
     },
     video: { type: 'drive', id: '1-1Dw7spji40S8wD_cgSnZweJIHbtG87B' },
+    thumbnail: '/thumbs/a-second-life-trailer.jpg',
   },
 
   // ── Weiteres (web / study / off-niche) ──
