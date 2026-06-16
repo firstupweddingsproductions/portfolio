@@ -107,7 +107,7 @@ export const PROJECTS: Project[] = [
       de: 'Eigener Horror-Kurzfilm „Glow" — Drehbuch, Kamera, Regie und Postproduktion.',
       en: 'Original horror short “Glow” — script, camera, directing and post-production.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '12BJ6MXDBx1GffQm6svH7jz60543XVGUm' },
   },
   {
     slug: 'nachdreh-spur-des-falken',
@@ -119,7 +119,7 @@ export const PROJECTS: Project[] = [
       de: 'Studentische Übung / Hommage (nicht-kommerziell): Nachdreh einer Szene aus „Die Spur des Falken" (1941).',
       en: 'Student exercise / homage (non-commercial): re-shoot of a scene from “The Maltese Falcon” (1941).',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1XeZqIZldnDd0p6TU_KutQ8wtVT8bV3WD' },
   },
 
   // ── Corporate (Drive: "Corporate", 4) ──
@@ -134,7 +134,7 @@ export const PROJECTS: Project[] = [
       de: 'Produktvorstellung für Dataport — Konzeption, Kamera und Postproduktion.',
       en: 'Product presentation for Dataport — concept, camera and post-production.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1iA7N8Bp8I5JEjHMMzFCFPxmOPSod6ca7' },
   },
   {
     slug: 'dataport-produktguide',
@@ -146,7 +146,7 @@ export const PROJECTS: Project[] = [
       de: 'Produktguide-Video für Dataport.',
       en: 'Product guide video for Dataport.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1mlSEHJOCDliu8IkDudCAVeZeRY3UftXD' },
   },
   {
     slug: 'dataport-produktguide-2',
@@ -158,7 +158,7 @@ export const PROJECTS: Project[] = [
       de: 'Produktguide-Video (Teil 2) für Dataport.',
       en: 'Product guide video (part 2) for Dataport.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1d6EVb6CEJCh2kX3fqNzDwiMTippJjoh3' },
   },
   {
     slug: 'dataport-produktguide-3',
@@ -170,7 +170,7 @@ export const PROJECTS: Project[] = [
       de: 'Produktguide-Video (Teil 3) für Dataport.',
       en: 'Product guide video (part 3) for Dataport.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1voK3r9lnJ10NlxuIZj-RvOPNrhb-DWDQ' },
   },
 
   // ── Interviews & Events (Drive: "Interviews / Event Recaps", 3) ──
@@ -185,7 +185,7 @@ export const PROJECTS: Project[] = [
       de: 'Event-Recap eines Bereichsmeetings für Dataport.',
       en: 'Event recap of a divisional meeting for Dataport.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1yLfcrA17K9wav_HrqMgqj08tfrHJh9Oy' },
   },
   {
     slug: 'dataport-interview-blog',
@@ -197,7 +197,7 @@ export const PROJECTS: Project[] = [
       de: 'Interview-Format („Interview Blog") für Dataport.',
       en: 'Interview format (“Interview Blog”) for Dataport.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1nLwY7j9DH6-bopf_tp4h5zwIMAxvHF4S' },
   },
   {
     slug: 'dataport-hausmesse-recap',
@@ -209,7 +209,7 @@ export const PROJECTS: Project[] = [
       de: 'Recap der Dataport-Hausmesse.',
       en: 'Recap of the Dataport in-house expo.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1wou9Px-6CCWyXGUXPecRc28RrrmccQfC' },
   },
 
   // ── Visuelle Arbeiten (Drive: "Visuelle Arbeit", 2) ──
@@ -224,7 +224,7 @@ export const PROJECTS: Project[] = [
       de: 'Cinematischer Verlobungs-Trailer für First Up Weddings (meine eigene Hochzeitsfilm-Marke).',
       en: 'Cinematic engagement trailer for First Up Weddings (my own wedding-film brand).',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1jx4qZH5h1kL95DwWBBqK_nrJsekVbXvb' },
   },
   {
     slug: 'mustafa-yaren-verlobungstrailer',
@@ -248,7 +248,7 @@ export const PROJECTS: Project[] = [
       de: 'Trailer-Schnitt „A Second Life".',
       en: 'Trailer edit “A Second Life”.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '1-1Dw7spji40S8wD_cgSnZweJIHbtG87B' },
   },
 
   // ── Weiteres (web / study / off-niche) ──
