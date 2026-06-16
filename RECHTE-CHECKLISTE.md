@@ -9,6 +9,26 @@ bei Auftrags-/Arbeitgeberarbeiten) und das **Recht am eigenen Bild** abgebildete
 
 ---
 
+## ✅ Im Code bereits umgesetzt (von Claude)
+- **„Nachdreh: Die Spur des Falken"** ist jetzt als **Studienprojekt / Hommage (nicht-kommerziell)**
+  gekennzeichnet (Rolle + Beschreibung).
+- **Bachelorthesis-PDF**: vorsorglich **nicht verlinkt** (`pdf` im Datensatz auskommentiert), bis eine
+  bereinigte Version ohne geschützte Dune-Filmstills vorliegt.
+- **Fertige Vorlagen** zum Einholen der Freigaben liegen in `freigaben/`:
+  - `freigaben/dataport-freigabe-anfrage.md`
+  - `freigaben/einwilligung-personen.md`
+
+## ⏳ Nur du selbst (real-world — kann ich nicht für dich tun)
+- Dataport-Freigabe **senden** (Vorlage s. o.) — ich versende nichts in deinem Namen.
+- Einwilligungen der Paare/Darsteller **einholen** (Vorlage s. o.).
+- **Musik-/Footage-Lizenzen** prüfen (deine Unterlagen einsehen kann ich nicht).
+- **Uni-Projekte**: Team-/Fremdanteile prüfen (nur dir bekannt).
+
+> Sobald du eine Dataport-Freigabe hast: sag Bescheid, dann kann ich die Videos voll einbinden.
+> Bis dahin auf Wunsch „nur Vorschau / Name neutralisieren" — sag, ob ich das umsetzen soll.
+
+---
+
 ## 🔴 Höchstes Risiko — Dataport-Videos (7 Stück)
 
 Betrifft: `Dataport — Produktguide`, `… Produktguide 2`, `… Produktguide 3`,

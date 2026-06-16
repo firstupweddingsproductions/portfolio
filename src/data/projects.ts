@@ -114,10 +114,10 @@ export const PROJECTS: Project[] = [
     title: 'Nachdreh: "Die Spur des Falken" (1941)',
     category: 'film',
     year: '2025', // TODO: Jahr aus Drive prüfen (war im Dateinamen abgeschnitten)
-    role: { de: 'Kamera · Regie · Postproduktion', en: 'Camera · Directing · Post' },
+    role: { de: 'Studienprojekt · Kamera · Regie · Postproduktion', en: 'Student project · Camera · Directing · Post' },
     description: {
-      de: 'Kurzfilmprojekt: Nachdreh einer Szene aus „Die Spur des Falken" (1941).',
-      en: 'Short-film project: re-shoot of a scene from “The Maltese Falcon” (1941).',
+      de: 'Studentische Übung / Hommage (nicht-kommerziell): Nachdreh einer Szene aus „Die Spur des Falken" (1941).',
+      en: 'Student exercise / homage (non-commercial): re-shoot of a scene from “The Maltese Falcon” (1941).',
     },
     video: { type: 'drive', id: '' }, // TODO: Drive file-ID
   },
@@ -317,7 +317,7 @@ export const PROJECTS: Project[] = [
       en: 'B.Eng. thesis: architectural set design in Dune (2021) and Dune: Part Two (2024).',
     },
     video: { type: 'none' },
-    pdf: '/docs/bachelorthesis-dune.pdf',
+    // pdf: nur eine BEREINIGTE Version (ohne urheberrechtlich geschützte Dune-Filmstills) verlinken — siehe RECHTE-CHECKLISTE.md
   },
 ];
 
