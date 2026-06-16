@@ -7,7 +7,12 @@ interface Props {
 const { project, lang } = Astro.props;
 
 const role = project.role[lang];
-const isLink = !!project.link;
+
+const isExternal = !!project.link;
+const isPdf = !project.link && !!project.pdf;
+const href = project.link ?? project.pdf;
+const isAnchor = !!href;
+
 const videoType = project.video.type;
 const videoId = project.video.type === 'none' ? '' : project.video.id;
 
@@ -21,9 +26,9 @@ const initials =
     .join('')
     .toUpperCase() || 'AK';
 
-const Tag = isLink ? 'a' : 'button';
-const attrs = isLink
-  ? { href: project.link, target: '_blank', rel: 'noopener' }
+const Tag = isAnchor ? 'a' : 'button';
+const attrs = isAnchor
+  ? { href, target: '_blank', rel: 'noopener' }
   : {
       type: 'button',
       'data-video': '',
@@ -61,7 +66,11 @@ const attrs = isLink
       <div class="absolute inset-0 flex items-center justify-center bg-ink/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <span class="flex h-9 w-9 items-center justify-center rounded-full bg-amber text-ink">
           {
-            isLink ? (
+            isPdf ? (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 3v5h5M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5z" />
+              </svg>
+            ) : isExternal ? (
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8" />
               </svg>
@@ -78,7 +87,7 @@ const attrs = isLink
     <!-- Title + meta -->
     <div class="min-w-0 flex-1">
       <h3 class="font-heading text-xl font-semibold leading-tight text-paper transition-colors group-hover:text-amber-bright sm:text-2xl">
-        {project.title}{isLink ? ' ↗' : ''}
+        {project.title}{isExternal ? ' ↗' : ''}
       </h3>
       <p class="mt-1.5 text-sm text-fog">{role} · {project.year}</p>
     </div>

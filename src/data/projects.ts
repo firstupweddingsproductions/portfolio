@@ -86,6 +86,7 @@ export interface Project {
   video: VideoSource;
   thumbnail?: string;
   link?: string; // external link (used for 'weiteres' web projects)
+  pdf?: string; // opens a PDF (project documentation / screenshots) in a new tab
 }
 
 // ─── PLACEHOLDER PROJECTS ────────────────────────────────────────────────────
@@ -237,6 +238,7 @@ export const PROJECTS: Project[] = [
       en: 'University project: a 3D-printed, smart-programmed white cane with sensors for obstacle detection and feedback.',
     },
     video: { type: 'none' },
+    pdf: '/docs/blindenstock.pdf',
     // thumbnail: '/thumbs/blindenstock.jpg',
   },
   {
@@ -250,6 +252,7 @@ export const PROJECTS: Project[] = [
       en: 'Interactive VR game project from university — concept, 3D environment and interaction design.',
     },
     video: { type: 'none' },
+    pdf: '/docs/vr-spielprojekt.pdf',
     // thumbnail: '/thumbs/vr.jpg',
   },
   {
@@ -263,6 +266,7 @@ export const PROJECTS: Project[] = [
       en: 'B.Eng. thesis: architectural set design in Dune (2021) and Dune: Part Two (2024).',
     },
     video: { type: 'none' },
+    pdf: '/docs/bachelorthesis-dune.pdf',
   },
 ];
 
