@@ -274,7 +274,7 @@ export const PROJECTS: Project[] = [
       en: 'My own brand for cinematic wedding and event films — founded and designed by me. Bilingual website built entirely by myself (Astro + Tailwind).',
     },
     video: { type: 'none' },
-    link: 'https://firstupweddings.de',
+    link: 'https://firstupweddings.de/',
   },
   {
     slug: 'first-up-productions',
@@ -287,7 +287,7 @@ export const PROJECTS: Project[] = [
       en: 'My own brand for corporate video production — brand building, copy and implementation, all done by me.',
     },
     video: { type: 'none' },
-    link: 'https://firstupproductions.de',
+    link: 'https://firstupproductions.de/',
   },
   {
     slug: 'smart-blindenstock',
@@ -328,7 +328,7 @@ export const PROJECTS: Project[] = [
       en: 'B.Eng. thesis: architectural set design in Dune (2021) and Dune: Part Two (2024).',
     },
     video: { type: 'none' },
-    // pdf: nur eine BEREINIGTE Version (ohne urheberrechtlich geschützte Dune-Filmstills) verlinken — siehe RECHTE-CHECKLISTE.md
+    pdf: 'https://drive.google.com/file/d/1kKm8Xoi-lgiAChryGCQjU8G7Ok0xInX-/view',
   },
 ];
 
