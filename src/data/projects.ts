@@ -87,6 +87,10 @@ export interface Project {
   thumbnail?: string;
   link?: string; // external link (used for 'weiteres' web projects)
   pdf?: string; // opens a PDF (project documentation / screenshots) in a new tab
+  gallery?: string[]; // image slideshow shown in the lightbox
+  download?: string; // download URL (e.g. a Drive folder) shown as a button in the lightbox
+  thumbnailContain?: boolean; // fit the thumbnail with object-contain (e.g. for logos)
+  thumbnailBg?: string; // background color behind a 'contain' thumbnail
 }
 
 // ─── PROJECTS ────────────────────────────────────────────────────────────────
@@ -275,6 +279,9 @@ export const PROJECTS: Project[] = [
     },
     video: { type: 'none' },
     link: 'https://firstupweddings.de/',
+    thumbnail: '/thumbs/first-up-weddings.png',
+    thumbnailContain: true,
+    thumbnailBg: '#fafafa',
   },
   {
     slug: 'first-up-productions',
@@ -288,6 +295,9 @@ export const PROJECTS: Project[] = [
     },
     video: { type: 'none' },
     link: 'https://firstupproductions.de/',
+    thumbnail: '/thumbs/first-up-productions.png',
+    thumbnailContain: true,
+    thumbnailBg: '#0a0a0a',
   },
   {
     slug: 'smart-blindenstock',
@@ -296,26 +306,39 @@ export const PROJECTS: Project[] = [
     year: '2024',
     role: { de: '3D-Druck · Programmierung · Sensorik', en: '3D Printing · Programming · Sensors' },
     description: {
-      de: 'Studienprojekt: ein 3D-gedruckter, smart programmierter Blindenstock mit Sensorik zur Hinderniserkennung und Feedback.',
-      en: 'University project: a 3D-printed, smart-programmed white cane with sensors for obstacle detection and feedback.',
+      de: 'Studienprojekt: ein 3D-gedruckter, smart programmierter Blindenstock mit Sensorik zur Hinderniserkennung und Feedback. Die Slideshow zeigt Prozess und fertiges Projekt — das ausführliche Paper zu Code & Aufbau sende ich gerne auf Anfrage.',
+      en: 'University project: a 3D-printed, smart-programmed white cane with sensors for obstacle detection and feedback. The slideshow shows the process and finished build — the detailed paper on code & construction is available on request.',
     },
     video: { type: 'none' },
-    pdf: '/docs/blindenstock.pdf',
-    // thumbnail: '/thumbs/blindenstock.jpg',
+    thumbnail: '/thumbs/smart-blindenstock.jpg',
+    gallery: [
+      '/gallery/blindenstock/01.jpg',
+      '/gallery/blindenstock/02.jpg',
+      '/gallery/blindenstock/03.jpg',
+      '/gallery/blindenstock/04.jpg',
+      '/gallery/blindenstock/05.jpg',
+      '/gallery/blindenstock/06.jpg',
+      '/gallery/blindenstock/07.jpg',
+      '/gallery/blindenstock/08.jpg',
+      '/gallery/blindenstock/09.jpg',
+      '/gallery/blindenstock/10.jpg',
+      '/gallery/blindenstock/11.jpg',
+      '/gallery/blindenstock/12.jpg',
+    ],
   },
   {
     slug: 'vr-spielprojekt',
-    title: 'VR-Spielprojekt',
+    title: 'VR-Spielprojekt — OdysseyThroughTime',
     category: 'weiteres',
     year: '2023',
     role: { de: 'Game Design · VR · 3D', en: 'Game Design · VR · 3D' },
     description: {
-      de: 'Interaktives VR-Spielprojekt aus dem Studium — Konzeption, 3D-Umgebung und Interaktionsdesign.',
-      en: 'Interactive VR game project from university — concept, 3D environment and interaction design.',
+      de: 'Interaktives VR-Spielprojekt „OdysseyThroughTime" aus dem Studium — Konzeption, 3D-Umgebung und Interaktionsdesign. Den Projektordner kannst du herunterladen; ein Gameplay-Video folgt.',
+      en: 'Interactive VR game project “OdysseyThroughTime” from university — concept, 3D environment and interaction design. The project folder is available to download; a gameplay video is coming.',
     },
-    video: { type: 'none' },
-    pdf: '/docs/vr-spielprojekt.pdf',
-    // thumbnail: '/thumbs/vr.jpg',
+    video: { type: 'none' }, // TODO: Video-Link nachtragen → { type: 'vimeo'|'drive', id: '...' }
+    download: 'https://drive.google.com/drive/folders/1KJPEub7iO8Xh9AsG0fb8fpIWM8UbpalL?usp=sharing',
+    thumbnail: '/thumbs/vr-spielprojekt.jpg',
   },
   {
     slug: 'bachelorthesis-dune',

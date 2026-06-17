@@ -10,13 +10,17 @@ const role = project.role[lang];
 const cat = getCategory(project.category);
 const catName = cat ? catLabel(cat, lang) : project.category;
 
+const hasGallery = Array.isArray(project.gallery) && project.gallery.length > 0;
 const isExternal = !!project.link;
 const isPdf = !project.link && !!project.pdf;
+const isAnchor = !hasGallery && (isExternal || isPdf); // link / pdf open in a new tab
 const href = project.link ?? project.pdf;
-const isAnchor = !!href;
 
 const videoType = project.video.type;
 const videoId = project.video.type === 'none' ? '' : project.video.id;
+
+const kind = hasGallery ? 'gallery' : isPdf ? 'pdf' : isExternal ? 'link' : 'video';
+const contain = !!project.thumbnailContain;
 
 const initials =
   project.title
@@ -28,20 +32,26 @@ const initials =
     .join('')
     .toUpperCase() || 'AK';
 
+const common = {
+  'data-title': project.title,
+  'data-role': role,
+  'data-year': project.year,
+  'data-cat': catName,
+  'data-desc': project.description[lang],
+};
 const Tag = isAnchor ? 'a' : 'button';
 const attrs = isAnchor
   ? { href, target: '_blank', rel: 'noopener' }
-  : {
-      type: 'button',
-      'data-video': '',
-      'data-video-type': videoType,
-      'data-video-id': videoId,
-      'data-title': project.title,
-      'data-role': role,
-      'data-year': project.year,
-      'data-cat': catName,
-      'data-desc': project.description[lang],
-    };
+  : hasGallery
+    ? { type: 'button', 'data-lightbox': '', 'data-gallery': JSON.stringify(project.gallery), ...common }
+    : {
+        type: 'button',
+        'data-lightbox': '',
+        'data-video-type': videoType,
+        'data-video-id': videoId,
+        ...(project.download ? { 'data-download': project.download } : {}),
+        ...common,
+      };
 ---
 
 <li>
@@ -53,14 +63,21 @@ const attrs = isAnchor
     {...attrs}
   >
     <!-- Thumbnail (always visible) -->
-    <div class="relative aspect-video w-[116px] shrink-0 overflow-hidden rounded-md border border-ink-line bg-ink-soft sm:w-[188px]">
+    <div
+      class="relative aspect-video w-[116px] shrink-0 overflow-hidden rounded-md border border-ink-line bg-ink-soft sm:w-[188px]"
+      style={contain && project.thumbnailBg ? `background-color:${project.thumbnailBg}` : undefined}
+    >
       {
         project.thumbnail ? (
           <img
             src={project.thumbnail}
             alt={project.title}
             loading="lazy"
-            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            class={
+              contain
+                ? 'h-full w-full object-contain p-2 sm:p-5'
+                : 'h-full w-full object-cover transition-transform duration-500 group-hover:scale-105'
+            }
           />
         ) : (
           <div class="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_30%_20%,#1a1a1a,#0c0c0c)]">
@@ -72,11 +89,16 @@ const attrs = isAnchor
       <div class="absolute inset-0 flex items-center justify-center bg-ink/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <span class="flex h-9 w-9 items-center justify-center rounded-full bg-amber text-ink">
           {
-            isPdf ? (
+            kind === 'gallery' ? (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="13" height="13" rx="2" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 21h12a2 2 0 0 0 2-2V8" />
+              </svg>
+            ) : kind === 'pdf' ? (
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 3v5h5M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5z" />
               </svg>
-            ) : isExternal ? (
+            ) : kind === 'link' ? (
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8" />
               </svg>
