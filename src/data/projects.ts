@@ -339,6 +339,8 @@ export const PROJECTS: Project[] = [
     video: { type: 'none' }, // TODO: Video-Link nachtragen → { type: 'vimeo'|'drive', id: '...' }
     download: 'https://drive.google.com/drive/folders/1KJPEub7iO8Xh9AsG0fb8fpIWM8UbpalL?usp=sharing',
     thumbnail: '/thumbs/vr-spielprojekt.jpg',
+    thumbnailContain: true,
+    thumbnailBg: '#16141c',
   },
   {
     slug: 'bachelorthesis-dune',
@@ -352,6 +354,9 @@ export const PROJECTS: Project[] = [
     },
     video: { type: 'none' },
     pdf: 'https://drive.google.com/file/d/1kKm8Xoi-lgiAChryGCQjU8G7Ok0xInX-/view',
+    thumbnail: '/thumbs/bachelorthesis-haw.jpg',
+    thumbnailContain: true,
+    thumbnailBg: '#ffffff',
   },
 ];
 
