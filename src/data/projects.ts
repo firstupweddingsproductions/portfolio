@@ -25,7 +25,7 @@ export interface Category {
 export const CATEGORIES: Category[] = [
   {
     key: 'film',
-    de: 'Kurzfilm',
+    de: 'Kurzfilme',
     en: 'Short Films',
     blurb: {
       de: 'Eigene filmische Arbeiten — Regie, Drehbuch, Kamera, Schnitt, Atmosphäre.',
@@ -108,8 +108,8 @@ export const PROJECTS: Project[] = [
     featured: true,
     role: { de: 'Drehbuch · Kamera · Regie · Postproduktion', en: 'Script · Camera · Directing · Post' },
     description: {
-      de: 'Eigener Horror-Kurzfilm „Glow" — Drehbuch, Kamera, Regie und Postproduktion.',
-      en: 'Original horror short “Glow” — script, camera, directing and post-production.',
+      de: 'Eigener Horror-Kurzfilm „Glow". Drehbuch, Kamera, Regie und Postproduktion.',
+      en: 'Original horror short “Glow”. Script, camera, directing and post-production.',
     },
     video: { type: 'drive', id: '12BJ6MXDBx1GffQm6svH7jz60543XVGUm' },
     thumbnail: '/thumbs/glow-horror-kurzfilm.jpg',
@@ -137,8 +137,8 @@ export const PROJECTS: Project[] = [
     featured: true,
     role: { de: 'Konzeption · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
     description: {
-      de: 'Produktvorstellung für Dataport — Konzeption, Kamera und Postproduktion.',
-      en: 'Product presentation for Dataport — concept, camera and post-production.',
+      de: 'Produktvorstellung für Dataport. Konzeption, Kamera und Postproduktion.',
+      en: 'Product presentation for Dataport. Concept, camera and post-production.',
     },
     video: { type: 'drive', id: '1iA7N8Bp8I5JEjHMMzFCFPxmOPSod6ca7' },
     thumbnail: '/thumbs/dataport-produktvorstellung.jpg',
@@ -234,8 +234,8 @@ export const PROJECTS: Project[] = [
     featured: true,
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
-      de: 'Cinematischer Verlobungs-Trailer für First Up Weddings (meine eigene Hochzeitsfilm-Marke).',
-      en: 'Cinematic engagement trailer for First Up Weddings (my own wedding-film brand).',
+      de: 'Cinematischer Verlobungstrailer für First Up Weddings, meine eigene Hochzeitsfilm-Marke. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
+      en: 'Cinematic engagement trailer for First Up Weddings, my own wedding-film brand. Beyond the trailers I also produce longer highlight videos and more.',
     },
     video: { type: 'drive', id: '1jx4qZH5h1kL95DwWBBqK_nrJsekVbXvb' },
     thumbnail: '/thumbs/verlobung-trailer-ilayda-emin.jpg',
@@ -247,10 +247,11 @@ export const PROJECTS: Project[] = [
     year: '2026',
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
-      de: 'Cinematischer Verlobungs-Trailer für First Up Weddings.',
-      en: 'Cinematic engagement trailer for First Up Weddings.',
+      de: 'Cinematischer Verlobungstrailer für First Up Weddings. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate. Video und Foto-Slideshow folgen.',
+      en: 'Cinematic engagement trailer for First Up Weddings. Beyond the trailers I also produce longer highlight videos and more. Video and photo slideshow coming soon.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Drive file-ID
+    video: { type: 'drive', id: '' }, // TODO: Trailer-Link nachtragen
+    // gallery: ['/gallery/mustafa-yaren/01.jpg', ...],  // Foto-Slideshow: Fotos folgen
   },
   {
     slug: 'a-second-life-trailer',
