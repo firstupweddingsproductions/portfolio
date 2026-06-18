@@ -4,11 +4,6 @@ import { routes } from '../i18n/routes';
 const lang = 'de';
 const contact = routes[lang].kontakt;
 
-const skills = [
-  'Premiere Pro', 'After Effects', 'Audition', 'Color Grading',
-  'Photoshop', 'Lightroom', 'Illustrator', 'InDesign',
-  'Regie & Drehbuch', 'Kamera', 'Motion Design', 'Git',
-];
 const languages = [
   { l: 'Deutsch', lvl: 'Muttersprache' },
   { l: 'Englisch', lvl: 'fließend' },
@@ -16,77 +11,27 @@ const languages = [
   { l: 'Spanisch', lvl: 'Grundkenntnisse' },
   { l: 'Französisch', lvl: 'Grundkenntnisse' },
 ];
+
+const linkedin = 'https://www.linkedin.com/in/adem-kocyigit';
+const dataport = 'https://www.dataport.de/';
+const fuw = 'https://firstupweddings.de/';
+const fup = 'https://firstupproductions.de/';
+const thesis = 'https://drive.google.com/file/d/1kKm8Xoi-lgiAChryGCQjU8G7Ok0xInX-/view';
+const glow = 'https://drive.google.com/file/d/12BJ6MXDBx1GffQm6svH7jz60543XVGUm/view';
+const lc = 'text-paper underline decoration-amber/40 underline-offset-4 transition-colors hover:text-amber-bright hover:decoration-amber-bright';
 ---
 
 <Layout title="Über mich" lang={lang}>
-  <div>
-    <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
-      <div class="reveal max-w-2xl lg:order-2 lg:flex-1">
-        <p class="mb-4 text-xs uppercase tracking-[0.25em] text-amber">Über mich</p>
-        <h1 class="font-heading text-4xl font-bold leading-tight tracking-tightish text-paper sm:text-5xl">
-          Geschichten erzählen — <span class="text-amber-bright">in jedem Format</span>.
-        </h1>
-
-        <div class="mt-8 space-y-5 text-[17px] leading-relaxed text-fog">
-          <p>
-            Ich bin <span class="text-paper">Adem Kocyigit</span>, frisch graduierter Medieningenieur
-            (B.Eng., HAW Kiel) aus Kiel, mit einem klaren Fokus auf Video, Film und visuelles Erzählen.
-            Ob Kamera, Schnitt, Motion Design oder Konzept: Mich begeistert der ganze Weg von der ersten Idee bis
-            zum fertigen Bild. Mein vielseitiges Studium umfasste über den Bereich der audiovisuellen Medien hinaus auch eine Vielzahl von anderen Bereichen.
-            Unter anderem Projektmanagement, agile Prozesse, mehrere Programmiersprachen, UX/UI Design, CAD, Marketingkompetenzen, Anforderungsmanagement
-            und ingenieursnahe Themen wie Elektrotechnik, Messtechnik und Elementare Techniken wurden stets thematisiert. Das Studium selbst gilt als Schnitstelle
-            zwischen Informatik, Design, Medien und Ingenieurwissenschaften.
-          </p>
-          <p>
-            Praktische Erfahrung habe ich besonders als <span class="text-paper">Werkstudent bei Dataport AöR</span>
-            gesammelt, wo ich Corporate-, Lern- und Projektvideos konzipiert, gedreht und in der
-            Postproduktion fertiggestellt habe, inklusive Motion Design, Untertitelung, Color Grading und
-            plattformgerechtem Export, in enger Abstimmung mit verschiedenen Stakeholdern.
-          </p>
-          <p>
-            Parallel baue ich meine eigenen Marken auf: <span class="text-paper">First Up Weddings</span>
-            für cinematische Hochzeits- und Eventfilme und <span class="text-paper">First Up Productions</span>
-            für Unternehmenscontent. Hier verantworte ich alles selbst, von Planung und Kamera über Ton und
-            Schnitt bis zum Farblook.
-          </p>
-          <p>
-            Mein Herz schlägt für den Film: Ich schreibe, inszeniere und schneide eigene Kurzfilme. Ein
-            aktueller Horror-Kurzfilm ist 2026 bei Festivals eingereicht. In meiner Bachelorthesis habe ich
-            mich mit dem architektonischen <span class="text-paper">Set-Design in Dune und Dune: Part Two</span>
-            beschäftigt, einem Thema, das meine Faszination für visuelle Welten gut zusammenfasst.
-          </p>
-          <p>
-            Mein Ziel: der Einstieg in Produktionsnahe Rollen, langfristig auch weitere eigene
-            Projekte. Produktionsnahe Rollen in anderen Bereichen, wie der IT Bereich sind für mich durchaus auch interessant um
-            andere Perspektiven kennen zu lernen.
-          </p>
-          <p>
-            Was du hier siehst, ist eine engere Auswahl. Weitere Videos, Web- und sonstige Projekte sende
-            ich dir gerne auf Anfrage zu.
-          </p>
-        </div>
-      </div>
-
-      <div class="reveal order-first mx-auto w-full max-w-md shrink-0 lg:order-1 lg:mx-0 lg:w-[34rem]">
-        <img
-          src="/images/adem-portrait.jpg"
-          alt="Adem Kocyigit"
-          loading="lazy"
-          class="aspect-[4/5] w-full rounded-lg border border-ink-line object-cover object-center"
-        />
-      </div>
-    </div>
-
-    <div class="mt-14 grid max-w-4xl gap-10 sm:grid-cols-2">
-      <div>
-        <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-fog">Werkzeuge & Fähigkeiten</h2>
-        <ul class="mt-4 flex flex-wrap gap-2">
-          {skills.map((s) => (
-            <li class="rounded-full border border-ink-line bg-ink-soft px-3 py-1.5 text-sm text-paper">{s}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
+  <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
+    <!-- Left: portrait + languages -->
+    <aside class="reveal order-first mx-auto w-full max-w-md shrink-0 lg:order-1 lg:mx-0 lg:w-[28rem]">
+      <img
+        src="/images/adem-portrait.jpg"
+        alt="Adem Kocyigit"
+        loading="lazy"
+        class="aspect-[4/5] w-full rounded-lg border border-ink-line object-cover object-center"
+      />
+      <div class="mt-8 max-w-[18rem]">
         <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-fog">Sprachen</h2>
         <ul class="mt-4 space-y-2.5">
           {languages.map((x) => (
@@ -97,15 +42,68 @@ const languages = [
           ))}
         </ul>
       </div>
-    </div>
+    </aside>
 
-    <div class="mt-14">
-      <a
-        href={contact}
-        class="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-amber-bright"
-      >
-        Kontakt aufnehmen →
-      </a>
+    <!-- Right: intro + CTA -->
+    <div class="reveal max-w-2xl lg:order-2 lg:flex-1">
+      <p class="mb-4 text-xs uppercase tracking-[0.25em] text-amber">Über mich</p>
+      <h1 class="font-heading text-4xl font-bold leading-tight tracking-tightish text-paper sm:text-5xl">
+        Geschichten erzählen — <span class="text-amber-bright">in jedem Format</span>.
+      </h1>
+
+      <div class="mt-8 space-y-5 text-[17px] leading-relaxed text-fog">
+        <p>
+          Ich bin <a href={linkedin} target="_blank" rel="noopener" class={lc}>Adem Kocyigit</a>, frisch
+          graduierter Medieningenieur (B.Eng., HAW Kiel) aus Kiel, mit einem klaren Fokus auf Video, Film
+          und visuelles Erzählen. Ob Kamera, Schnitt, Motion Design oder Konzept: Mich begeistert der ganze
+          Weg von der ersten Idee bis zum fertigen Bild. Mein vielseitiges Studium umfasste über den Bereich
+          der audiovisuellen Medien hinaus auch eine Vielzahl von anderen Bereichen. Unter anderem
+          Projektmanagement, agile Prozesse, mehrere Programmiersprachen, UX/UI Design, CAD,
+          Marketingkompetenzen, Anforderungsmanagement und ingenieursnahe Themen wie Elektrotechnik,
+          Messtechnik und Elementare Techniken wurden stets thematisiert. Das Studium selbst gilt als
+          Schnitstelle zwischen Informatik, Design, Medien und Ingenieurwissenschaften.
+        </p>
+        <p>
+          Praktische Erfahrung habe ich besonders als
+          <a href={dataport} target="_blank" rel="noopener" class={lc}>Werkstudent bei Dataport AöR</a>
+          gesammelt, wo ich Corporate-, Lern- und Projektvideos konzipiert, gedreht und in der
+          Postproduktion fertiggestellt habe, inklusive Motion Design, Untertitelung, Color Grading und
+          plattformgerechtem Export, in enger Abstimmung mit verschiedenen Stakeholdern.
+        </p>
+        <p>
+          Parallel baue ich meine eigenen Marken auf:
+          <a href={fuw} target="_blank" rel="noopener" class={lc}>First Up Weddings</a> für cinematische
+          Hochzeits- und Eventfilme und
+          <a href={fup} target="_blank" rel="noopener" class={lc}>First Up Productions</a> für
+          Unternehmenscontent. Hier verantworte ich alles selbst, von Planung und Kamera über Ton und
+          Schnitt bis zum Farblook.
+        </p>
+        <p>
+          Mein Herz schlägt für den Film: Ich schreibe, inszeniere und schneide eigene Kurzfilme. Ein
+          aktueller <a href={glow} target="_blank" rel="noopener" class={lc}>Horror-Kurzfilm</a> ist 2026
+          bei Festivals eingereicht. In meiner Bachelorthesis habe ich mich mit dem architektonischen
+          <a href={thesis} target="_blank" rel="noopener" class={lc}>Set-Design in Dune und Dune: Part Two</a>
+          beschäftigt, einem Thema, das meine Faszination für visuelle Welten gut zusammenfasst.
+        </p>
+        <p>
+          Mein Ziel: der Einstieg in Produktionsnahe Rollen, langfristig auch weitere eigene Projekte.
+          Produktionsnahe Rollen in anderen Bereichen, wie der IT Bereich sind für mich durchaus auch
+          interessant um andere Perspektiven kennen zu lernen.
+        </p>
+        <p>
+          Was du hier siehst, ist eine engere Auswahl. Weitere Videos, Web- und sonstige Projekte sende ich
+          dir gerne auf Anfrage zu.
+        </p>
+      </div>
+
+      <div class="mt-10">
+        <a
+          href={contact}
+          class="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-amber-bright"
+        >
+          Kontakt aufnehmen →
+        </a>
+      </div>
     </div>
   </div>
 </Layout>

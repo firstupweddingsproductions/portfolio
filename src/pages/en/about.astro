@@ -4,11 +4,6 @@ import { routes } from '../../i18n/routes';
 const lang = 'en';
 const contact = routes[lang].kontakt;
 
-const skills = [
-  'Premiere Pro', 'After Effects', 'Audition', 'Color Grading',
-  'Photoshop', 'Lightroom', 'Illustrator', 'InDesign',
-  'Directing & Writing', 'Camera', 'Motion Design', 'Git',
-];
 const languages = [
   { l: 'German', lvl: 'native' },
   { l: 'English', lvl: 'fluent' },
@@ -16,73 +11,27 @@ const languages = [
   { l: 'Spanish', lvl: 'basic' },
   { l: 'French', lvl: 'basic' },
 ];
+
+const linkedin = 'https://www.linkedin.com/in/adem-kocyigit';
+const dataport = 'https://www.dataport.de/';
+const fuw = 'https://firstupweddings.de/';
+const fup = 'https://firstupproductions.de/';
+const thesis = 'https://drive.google.com/file/d/1kKm8Xoi-lgiAChryGCQjU8G7Ok0xInX-/view';
+const glow = 'https://drive.google.com/file/d/12BJ6MXDBx1GffQm6svH7jz60543XVGUm/view';
+const lc = 'text-paper underline decoration-amber/40 underline-offset-4 transition-colors hover:text-amber-bright hover:decoration-amber-bright';
 ---
 
 <Layout title="About" lang={lang}>
-  <div>
-    <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
-      <div class="reveal max-w-2xl lg:order-2 lg:flex-1">
-        <p class="mb-4 text-xs uppercase tracking-[0.25em] text-amber">About</p>
-        <h1 class="font-heading text-4xl font-bold leading-tight tracking-tightish text-paper sm:text-5xl">
-          Telling stories — <span class="text-amber-bright">in any format</span>.
-        </h1>
-
-        <div class="mt-8 space-y-5 text-[17px] leading-relaxed text-fog">
-          <p>
-            I'm <span class="text-paper">Adem Kocyigit</span>, a recently graduated media engineer
-            (B.Eng., HAW Kiel) based in Kiel, Germany, with a clear focus on video, film and visual
-            storytelling. Camera, editing, motion or concept: I love the whole journey from the first idea
-            to the finished image.
-          </p>
-          <p>
-            I gained hands-on experience as a <span class="text-paper">working student at Dataport AöR</span>,
-            where I conceived, shot and finished corporate, learning and project videos, including motion
-            design, subtitling, color and platform-ready exports, in close coordination with various
-            stakeholders.
-          </p>
-          <p>
-            Alongside that I'm building my own brands: <span class="text-paper">First Up Weddings</span> for
-            cinematic wedding and event films, and <span class="text-paper">First Up Productions</span> for
-            corporate content. Here I own every step, from planning and camera to sound, editing and the
-            color look.
-          </p>
-          <p>
-            Film is where my heart is: I write, direct and edit my own short films. A recent horror short was
-            submitted to festivals in 2026. My bachelor's thesis explored architectural
-            <span class="text-paper"> set design in Dune and Dune: Part Two</span>, a topic that sums up my
-            fascination with visual worlds.
-          </p>
-          <p>
-            My goal: to break into film- and production-related roles, and long term my own cinematic
-            projects as well as a possible master's or film-school application.
-          </p>
-          <p>
-            What you see here is a focused selection. More videos, web and other projects are available on
-            request, just reach out.
-          </p>
-        </div>
-      </div>
-
-      <div class="reveal order-first mx-auto w-full max-w-md shrink-0 lg:order-1 lg:mx-0 lg:w-[34rem]">
-        <img
-          src="/images/adem-portrait.jpg"
-          alt="Adem Kocyigit"
-          loading="lazy"
-          class="aspect-[4/5] w-full rounded-lg border border-ink-line object-cover object-center"
-        />
-      </div>
-    </div>
-
-    <div class="mt-14 grid max-w-4xl gap-10 sm:grid-cols-2">
-      <div>
-        <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-fog">Tools & Skills</h2>
-        <ul class="mt-4 flex flex-wrap gap-2">
-          {skills.map((s) => (
-            <li class="rounded-full border border-ink-line bg-ink-soft px-3 py-1.5 text-sm text-paper">{s}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
+  <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
+    <!-- Left: portrait + languages -->
+    <aside class="reveal order-first mx-auto w-full max-w-md shrink-0 lg:order-1 lg:mx-0 lg:w-[28rem]">
+      <img
+        src="/images/adem-portrait.jpg"
+        alt="Adem Kocyigit"
+        loading="lazy"
+        class="aspect-[4/5] w-full rounded-lg border border-ink-line object-cover object-center"
+      />
+      <div class="mt-8 max-w-[18rem]">
         <h2 class="font-heading text-sm uppercase tracking-[0.2em] text-fog">Languages</h2>
         <ul class="mt-4 space-y-2.5">
           {languages.map((x) => (
@@ -93,15 +42,66 @@ const languages = [
           ))}
         </ul>
       </div>
-    </div>
+    </aside>
 
-    <div class="mt-14">
-      <a
-        href={contact}
-        class="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-amber-bright"
-      >
-        Get in touch →
-      </a>
+    <!-- Right: intro + CTA -->
+    <div class="reveal max-w-2xl lg:order-2 lg:flex-1">
+      <p class="mb-4 text-xs uppercase tracking-[0.25em] text-amber">About</p>
+      <h1 class="font-heading text-4xl font-bold leading-tight tracking-tightish text-paper sm:text-5xl">
+        Telling stories — <span class="text-amber-bright">in any format</span>.
+      </h1>
+
+      <div class="mt-8 space-y-5 text-[17px] leading-relaxed text-fog">
+        <p>
+          I'm <a href={linkedin} target="_blank" rel="noopener" class={lc}>Adem Kocyigit</a>, a freshly
+          graduated media engineer (B.Eng., HAW Kiel) based in Kiel, with a clear focus on video, film and
+          visual storytelling. Camera, editing, motion design or concept: I love the whole journey from the
+          first idea to the finished image. My studies were broad and went well beyond audiovisual media,
+          also covering project management, agile processes, several programming languages, UX/UI design,
+          CAD, marketing, requirements engineering and engineering-related topics such as electrical
+          engineering and measurement technology. The programme itself sits at the intersection of computer
+          science, design, media and engineering.
+        </p>
+        <p>
+          I gained hands-on experience above all as a
+          <a href={dataport} target="_blank" rel="noopener" class={lc}>working student at Dataport AöR</a>,
+          where I conceived, shot and finished corporate, learning and project videos, including motion
+          design, subtitling, color grading and platform-ready exports, in close coordination with various
+          stakeholders.
+        </p>
+        <p>
+          Alongside that I'm building my own brands:
+          <a href={fuw} target="_blank" rel="noopener" class={lc}>First Up Weddings</a> for cinematic wedding
+          and event films, and <a href={fup} target="_blank" rel="noopener" class={lc}>First Up Productions</a>
+          for corporate content. Here I own every step, from planning and camera to sound, editing and the
+          color look.
+        </p>
+        <p>
+          Film is where my heart is: I write, direct and edit my own short films. A recent
+          <a href={glow} target="_blank" rel="noopener" class={lc}>horror short</a> was submitted to
+          festivals in 2026. My bachelor's thesis explored architectural
+          <a href={thesis} target="_blank" rel="noopener" class={lc}>set design in Dune and Dune: Part Two</a>,
+          a topic that sums up my fascination with visual worlds.
+        </p>
+        <p>
+          My goal: to move into production-related roles, and in the long run more of my own projects.
+          Production-related roles in other fields, such as IT, are genuinely interesting to me too, as a way
+          to get to know other perspectives.
+        </p>
+        <p>
+          What you see here is a focused selection. More videos, web and other projects are available on
+          request, just reach out.
+        </p>
+      </div>
+
+      <div class="mt-10">
+        <a
+          href={contact}
+          class="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-amber-bright"
+        >
+          Get in touch →
+        </a>
+      </div>
     </div>
   </div>
 </Layout>

@@ -24,15 +24,6 @@ export interface Category {
 
 export const CATEGORIES: Category[] = [
   {
-    key: 'film',
-    de: 'Kurzfilme',
-    en: 'Short Films',
-    blurb: {
-      de: 'Eigene filmische Arbeiten — Regie, Drehbuch, Kamera, Schnitt, Atmosphäre.',
-      en: 'Original films — directing, writing, camera, editing, atmosphere.',
-    },
-  },
-  {
     key: 'corporate',
     de: 'Corporate',
     en: 'Corporate',
@@ -42,21 +33,30 @@ export const CATEGORIES: Category[] = [
     },
   },
   {
-    key: 'interviews',
-    de: 'Interviews & Events',
-    en: 'Interviews & Events',
-    blurb: {
-      de: 'Interviewformate und Event-Recaps mit klarer Story und sauberem Schnitt.',
-      en: 'Interview formats and event recaps with a clear story and clean edit.',
-    },
-  },
-  {
     key: 'visuelle',
     de: 'Visuelle Arbeiten',
     en: 'Visual Work',
     blurb: {
       de: 'Social-Media-Visuals, Motion Design und visuelle Kommunikation.',
       en: 'Social media visuals, motion design and visual communication.',
+    },
+  },
+  {
+    key: 'film',
+    de: 'Kurzfilme',
+    en: 'Short Films',
+    blurb: {
+      de: 'Eigene filmische Arbeiten: Regie, Drehbuch, Kamera, Schnitt, Atmosphäre.',
+      en: 'Original films: directing, writing, camera, editing, atmosphere.',
+    },
+  },
+  {
+    key: 'interviews',
+    de: 'Interviews & Events',
+    en: 'Interviews & Events',
+    blurb: {
+      de: 'Interviewformate und Event-Recaps mit klarer Story und sauberem Schnitt.',
+      en: 'Interview formats and event recaps with a clear story and clean edit.',
     },
   },
   {
@@ -250,7 +250,8 @@ export const PROJECTS: Project[] = [
       de: 'Cinematischer Verlobungstrailer für First Up Weddings. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate. Video und Foto-Slideshow folgen.',
       en: 'Cinematic engagement trailer for First Up Weddings. Beyond the trailers I also produce longer highlight videos and more. Video and photo slideshow coming soon.',
     },
-    video: { type: 'drive', id: '' }, // TODO: Trailer-Link nachtragen
+    video: { type: 'drive', id: '1qq8oppPlGpR9tbMOvMXBiz3FskJ3LO6l' },
+    thumbnail: '/thumbs/mustafa-yaren-verlobungstrailer.jpg',
     // gallery: ['/gallery/mustafa-yaren/01.jpg', ...],  // Foto-Slideshow: Fotos folgen
   },
   {
