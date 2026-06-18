@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     slug: 'nachdreh-spur-des-falken',
     title: 'Nachdreh: "Die Spur des Falken" (1941)',
     category: 'film',
-    year: '2025', // TODO: Jahr aus Drive prüfen (war im Dateinamen abgeschnitten)
+    year: '2023',
     role: { de: 'Studienprojekt · Kamera · Regie · Postproduktion', en: 'Student project · Camera · Directing · Post' },
     description: {
       de: 'Studentische Übung / Hommage (nicht-kommerziell): Nachdreh einer Szene aus „Die Spur des Falken" (1941).',
@@ -215,7 +215,7 @@ export const PROJECTS: Project[] = [
     slug: 'dataport-hausmesse-recap',
     title: 'Dataport — Hausmesse Recap',
     category: 'interviews',
-    year: '2024',
+    year: '2025',
     role: { de: 'Kamera · Postproduktion', en: 'Camera · Post' },
     description: {
       de: 'Recap der Dataport-Hausmesse.',
@@ -230,7 +230,7 @@ export const PROJECTS: Project[] = [
     slug: 'verlobung-trailer-ilayda-emin',
     title: 'First Up Weddings — Ilayda & Emin Can',
     category: 'visuelle',
-    year: '2025',
+    year: '2026',
     featured: true,
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
@@ -244,7 +244,7 @@ export const PROJECTS: Project[] = [
     slug: 'mustafa-yaren-verlobungstrailer',
     title: 'First Up Weddings — Mustafa & Yaren',
     category: 'visuelle',
-    year: '2025', // TODO: Jahr prüfen
+    year: '2026',
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
       de: 'Cinematischer Verlobungs-Trailer für First Up Weddings.',
@@ -303,7 +303,7 @@ export const PROJECTS: Project[] = [
     slug: 'smart-blindenstock',
     title: 'Smarter Blindenstock (3D-Druck)',
     category: 'weiteres',
-    year: '2024',
+    year: '2025',
     role: { de: '3D-Druck · Programmierung · Sensorik', en: '3D Printing · Programming · Sensors' },
     description: {
       de: 'Studienprojekt: ein 3D-gedruckter, smart programmierter Blindenstock mit Sensorik zur Hinderniserkennung und Feedback. Die Slideshow zeigt Prozess und fertiges Projekt — das ausführliche Paper zu Code & Aufbau sende ich gerne auf Anfrage.',
@@ -330,7 +330,7 @@ export const PROJECTS: Project[] = [
     slug: 'vr-spielprojekt',
     title: 'VR-Spielprojekt — OdysseyThroughTime',
     category: 'weiteres',
-    year: '2023',
+    year: '2024/2025',
     role: { de: 'Game Design · VR · 3D', en: 'Game Design · VR · 3D' },
     description: {
       de: 'Interaktives VR-Spielprojekt „OdysseyThroughTime" aus dem Studium — Konzeption, 3D-Umgebung und Interaktionsdesign. Den Projektordner kannst du herunterladen; ein Gameplay-Video folgt.',
@@ -344,9 +344,9 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'bachelorthesis-dune',
-    title: 'Bachelorthesis — Set-Design in Dune',
+    title: 'Bachelorthesis — Set-Design in Dune (2021) und Dune: Part Two (2024)',
     category: 'weiteres',
-    year: '2026',
+    year: '2025/2026',
     role: { de: 'Forschung · Analyse', en: 'Research · Analysis' },
     description: {
       de: 'B.Eng.-Thesis: Architektonisches Set-Design in Dune (2021) und Dune: Part Two (2024).',
