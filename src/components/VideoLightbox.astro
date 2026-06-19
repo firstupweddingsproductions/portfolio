@@ -9,6 +9,7 @@ const { lang } = Astro.props;
 const closeLabel = t(lang, 'lightbox.close');
 const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kürze.';
 const downloadLabel = lang === 'en' ? 'Download project folder' : 'Projektordner herunterladen';
+const watchLabel = lang === 'en' ? 'Play video ↗' : 'Video abspielen ↗';
 const tabVideo = 'Video';
 const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
 ---
@@ -69,6 +70,18 @@ const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
       <div id="lb-counter" class="absolute bottom-2 right-3 hidden rounded bg-ink/70 px-2 py-1 text-xs text-paper"></div>
     </div>
 
+    <!-- Mobile-only fallback: open the video in its own (reliable) player page -->
+    <a
+      id="lb-mobile-watch"
+      href="#"
+      target="_blank"
+      rel="noopener"
+      class="mobile-watch mt-3 w-full items-center justify-center gap-2 rounded-full border border-amber/60 px-5 py-3 text-sm font-medium text-amber-bright transition-colors hover:bg-amber hover:text-ink"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+      {watchLabel}
+    </a>
+
     <div class="mt-5">
       <div class="flex items-baseline justify-between gap-4">
         <h3 id="lb-title" class="font-heading text-xl font-semibold text-paper sm:text-2xl"></h3>
@@ -105,6 +118,7 @@ const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
   const elMeta = document.getElementById('lb-meta');
   const elDesc = document.getElementById('lb-desc');
   const elDownload = document.getElementById('lb-download') as HTMLAnchorElement | null;
+  const mobileWatch = document.getElementById('lb-mobile-watch') as HTMLAnchorElement | null;
 
   let gallery: string[] = [];
   let gi = 0;
@@ -183,9 +197,24 @@ const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
     try { gallery = JSON.parse(el.getAttribute('data-gallery') || '[]'); } catch { gallery = []; }
     gi = 0;
     const vtype = el.getAttribute('data-video-type');
-    videoSrc = srcFor(vtype, el.getAttribute('data-video-id'));
+    const vid = el.getAttribute('data-video-id');
+    videoSrc = srcFor(vtype, vid);
     const hasVideoPane = vtype === 'vimeo' || vtype === 'drive';
     const hasGallery = gallery.length > 0;
+
+    // Mobile-only fallback: link to the video's own player page, which plays
+    // reliably where the embed may not (e.g. iOS Safari + Google Drive).
+    if (mobileWatch) {
+      if (hasVideoPane && vid) {
+        mobileWatch.href =
+          vtype === 'vimeo'
+            ? `https://vimeo.com/${vid}`
+            : `https://drive.google.com/file/d/${vid}/view`;
+        mobileWatch.classList.add('has-video');
+      } else {
+        mobileWatch.classList.remove('has-video');
+      }
+    }
 
     if (frame) frame.src = '';
     if (hasVideoPane && hasGallery) {
