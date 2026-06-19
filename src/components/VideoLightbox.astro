@@ -44,8 +44,10 @@ const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
       <iframe
         id="lb-frame"
         class="absolute inset-0 hidden h-full w-full"
-        allow="autoplay; fullscreen; picture-in-picture"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
         allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
         referrerpolicy="strict-origin-when-cross-origin"
         title="Player"></iframe>
 
