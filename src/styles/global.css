@@ -135,14 +135,16 @@ body.lightbox-open {
   overflow: hidden;
 }
 
-/* Mobile-only fallback button to open a video in Google Drive's own viewer.
-   Drive's embedded player is unreliable on phones (especially iOS Safari),
-   so on touch devices we offer a reliable "play" link. Hidden on desktop,
-   so the (perfected) desktop layout stays exactly as it is. */
+/* Mobile fallback button to open a video in Google Drive's own viewer.
+   Drive's embedded player is unreliable on phones, so on ANY mobile/touch
+   device (any browser — Safari, Chrome, Firefox, Samsung Internet, …) we
+   always offer a reliable "play" link. Keyed purely on a touch primary
+   input (pointer: coarse), i.e. phones/tablets, so the (perfected) desktop
+   layout — mouse/trackpad = fine pointer — stays exactly as it is. */
 .mobile-watch {
   display: none;
 }
-@media (hover: none) and (pointer: coarse) {
+@media (pointer: coarse) {
   .mobile-watch.has-video {
     display: inline-flex;
   }
