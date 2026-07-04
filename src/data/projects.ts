@@ -255,6 +255,19 @@ export const PROJECTS: Project[] = [
     // gallery: ['/gallery/mustafa-yaren/01.jpg', ...],  // Foto-Slideshow: Fotos folgen
   },
   {
+    slug: 'mihan-fahrettin-henna-trailer',
+    title: 'First Up Weddings — Mihan & Fahrettin',
+    category: 'visuelle',
+    year: '2026',
+    role: { de: 'Henna-Trailer · Kamera · Schnitt · Farblook', en: 'Henna Trailer · Camera · Edit · Color' },
+    description: {
+      de: 'Cinematischer Henna-Trailer für First Up Weddings, meine eigene Hochzeitsfilm-Marke. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
+      en: 'Cinematic henna-night trailer for First Up Weddings, my own wedding-film brand. Beyond the trailers I also produce longer highlight videos and more.',
+    },
+    video: { type: 'drive', id: '1TbjEJS3-IkGlxE4aMedtF8WPCHKt4o2h' },
+    thumbnail: '/thumbs/mihan-fahrettin-henna-trailer.jpg',
+  },
+  {
     slug: 'a-second-life-trailer',
     title: 'A Second Life — Trailer',
     category: 'visuelle',
