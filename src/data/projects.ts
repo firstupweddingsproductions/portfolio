@@ -247,12 +247,17 @@ export const PROJECTS: Project[] = [
     year: '2026',
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
-      de: 'Cinematischer Verlobungstrailer für First Up Weddings. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate. Video und Foto-Slideshow folgen.',
-      en: 'Cinematic engagement trailer for First Up Weddings. Beyond the trailers I also produce longer highlight videos and more. Video and photo slideshow coming soon.',
+      de: 'Cinematischer Verlobungstrailer für First Up Weddings. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
+      en: 'Cinematic engagement trailer for First Up Weddings. Beyond the trailers I also produce longer highlight videos and more.',
     },
     video: { type: 'drive', id: '1qq8oppPlGpR9tbMOvMXBiz3FskJ3LO6l' },
     thumbnail: '/thumbs/mustafa-yaren-verlobungstrailer.jpg',
-    // gallery: ['/gallery/mustafa-yaren/01.jpg', ...],  // Foto-Slideshow: Fotos folgen
+    gallery: [
+      '/gallery/mustafa-yaren/01.jpg',
+      '/gallery/mustafa-yaren/02.jpg',
+      '/gallery/mustafa-yaren/03.jpg',
+      '/gallery/mustafa-yaren/04.jpg',
+    ],
   },
   {
     slug: 'mihan-fahrettin-henna-trailer',

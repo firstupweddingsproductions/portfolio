@@ -19,7 +19,7 @@ const href = project.link ?? project.pdf;
 const videoType = project.video.type;
 const videoId = project.video.type === 'none' ? '' : project.video.id;
 
-const kind = hasGallery ? 'gallery' : isPdf ? 'pdf' : isExternal ? 'link' : 'video';
+const kind = videoType !== 'none' ? 'video' : hasGallery ? 'gallery' : isPdf ? 'pdf' : isExternal ? 'link' : 'video';
 const contain = !!project.thumbnailContain;
 
 const initials =
@@ -42,16 +42,15 @@ const common = {
 const Tag = isAnchor ? 'a' : 'button';
 const attrs = isAnchor
   ? { href, target: '_blank', rel: 'noopener' }
-  : hasGallery
-    ? { type: 'button', 'data-lightbox': '', 'data-gallery': JSON.stringify(project.gallery), ...common }
-    : {
-        type: 'button',
-        'data-lightbox': '',
-        'data-video-type': videoType,
-        'data-video-id': videoId,
-        ...(project.download ? { 'data-download': project.download } : {}),
-        ...common,
-      };
+  : {
+      type: 'button',
+      'data-lightbox': '',
+      // A project can have a video AND a gallery → the lightbox shows video/photo tabs.
+      ...(hasGallery ? { 'data-gallery': JSON.stringify(project.gallery) } : {}),
+      ...(videoType !== 'none' ? { 'data-video-type': videoType, 'data-video-id': videoId } : {}),
+      ...(project.download ? { 'data-download': project.download } : {}),
+      ...common,
+    };
 ---
 
 <li>
