@@ -3,6 +3,8 @@ import tailwind from '@astrojs/tailwind';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
+import cloudflare from "@astrojs/cloudflare";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Production domain — used for canonical URLs, og:url and sitemap.
@@ -20,4 +22,6 @@ export default defineConfig({
   // Static output — deploys to Cloudflare Pages / Netlify / GitHub Pages as-is.
   // (No SSR adapter needed for a portfolio; can be added later if required.)
   server: { port: 4323 },
+
+  adapter: cloudflare()
 });
