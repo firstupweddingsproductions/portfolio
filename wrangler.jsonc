@@ -1,0 +1,13 @@
+{
+  // Cloudflare deploy config for the static portfolio.
+  // The build (`npm run build` → `astro build`) outputs to ./dist, and the
+  // Cloudflare "Deploy command" runs `npx wrangler deploy`, which uploads that
+  // directory as static assets to the "portfolio" Worker. No server code /
+  // `main` entry point — this is a purely static site (unlike the SSR sister
+  // sites, which use the @astrojs/cloudflare adapter and a dist/_worker.js).
+  "name": "portfolio",
+  "compatibility_date": "2026-05-09",
+  "assets": {
+    "directory": "dist"
+  }
+}
