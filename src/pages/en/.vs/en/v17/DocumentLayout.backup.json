@@ -56,19 +56,21 @@
               "RelativeToolTip": "..\\ueber-mich.astro",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-18T10:58:00.477Z"
+              "WhenOpened": "2026-06-18T10:58:00.477Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "index.astro",
-              "DocumentMoniker": "C:\\Users\\Adem\\Desktop\\Portfolio\\src\\pages\\en\\index.astro",
-              "RelativeDocumentMoniker": "index.astro",
-              "ToolTip": "C:\\Users\\Adem\\Desktop\\Portfolio\\src\\pages\\en\\index.astro",
-              "RelativeToolTip": "index.astro",
+              "DocumentMoniker": "C:\\Users\\Adem\\Desktop\\Portfolio\\src\\pages\\index.astro",
+              "RelativeDocumentMoniker": "..\\index.astro",
+              "ToolTip": "C:\\Users\\Adem\\Desktop\\Portfolio\\src\\pages\\index.astro",
+              "RelativeToolTip": "..\\index.astro",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-18T10:56:32.472Z"
+              "WhenOpened": "2026-06-18T10:56:32.472Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -80,7 +82,8 @@
               "RelativeToolTip": "about.astro",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-18T10:56:17.77Z"
+              "WhenOpened": "2026-06-18T10:56:17.77Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -92,7 +95,8 @@
               "RelativeToolTip": "index.astro",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-18T10:56:14.557Z"
+              "WhenOpened": "2026-06-18T10:56:14.557Z",
+              "EditorCaption": ""
             }
           ]
         }

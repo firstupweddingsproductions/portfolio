@@ -153,7 +153,7 @@ export const PROJECTS: Project[] = [
       de: 'Produktguide-Video für Dataport.',
       en: 'Product guide video for Dataport.',
     },
-    video: { type: 'drive', id: '1mlSEHJOCDliu8IkDudCAVeZeRY3UftXD' },
+    video: { type: 'drive', id: '1d6EVb6CEJCh2kX3fqNzDwiMTippJjoh3' },
     thumbnail: '/thumbs/dataport-produktguide.jpg',
   },
   {
@@ -166,21 +166,8 @@ export const PROJECTS: Project[] = [
       de: 'Produktguide-Video (Teil 2) für Dataport.',
       en: 'Product guide video (part 2) for Dataport.',
     },
-    video: { type: 'drive', id: '1d6EVb6CEJCh2kX3fqNzDwiMTippJjoh3' },
-    thumbnail: '/thumbs/dataport-produktguide-2.jpg',
-  },
-  {
-    slug: 'dataport-produktguide-3',
-    title: 'Dataport — Produktguide 3',
-    category: 'corporate',
-    year: '2026',
-    role: { de: 'Konzeption · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
-    description: {
-      de: 'Produktguide-Video (Teil 3) für Dataport.',
-      en: 'Product guide video (part 3) for Dataport.',
-    },
     video: { type: 'drive', id: '1voK3r9lnJ10NlxuIZj-RvOPNrhb-DWDQ' },
-    thumbnail: '/thumbs/dataport-produktguide-3.jpg',
+    thumbnail: '/thumbs/dataport-produktguide-2.jpg',
   },
 
   // ── Interviews & Events (Drive: "Interviews / Event Recaps", 3) ──
