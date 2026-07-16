@@ -307,6 +307,22 @@ export const PROJECTS: Project[] = [
     thumbnailBg: '#0a0a0a',
   },
   {
+    slug: 'holsatia-kiel',
+    title: 'NDTSV Holsatia Kiel — Social Media',
+    category: 'weiteres',
+    year: '2025/2026',
+    role: { de: 'Social Media · Grafik · Foto · Video', en: 'Social Media · Graphics · Photo · Video' },
+    description: {
+      de: 'Ich betreue den Instagram-Account des NDTSV Holsatia Kiel und mache den Content komplett selbst: Ich gestalte die Grafiken und Visuals, zum Beispiel die Matchday-Posts, und fotografiere und filme auch selbst.',
+      en: 'I run the Instagram account of NDTSV Holsatia Kiel and produce the content end to end: I design the graphics and visuals, such as the matchday posts, and shoot the photos and videos myself.',
+    },
+    video: { type: 'none' },
+    link: 'https://www.instagram.com/holsatiakiel/',
+    thumbnail: '/thumbs/holsatia-kiel.png',
+    thumbnailContain: true,
+    thumbnailBg: '#ffffff',
+  },
+  {
     slug: 'smart-blindenstock',
     title: 'Smarter Blindenstock (3D-Druck)',
     category: 'weiteres',
