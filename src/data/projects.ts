@@ -198,19 +198,6 @@ export const PROJECTS: Project[] = [
     video: { type: 'drive', id: '1nLwY7j9DH6-bopf_tp4h5zwIMAxvHF4S' },
     thumbnail: '/thumbs/dataport-interview-blog.jpg',
   },
-  {
-    slug: 'dataport-hausmesse-recap',
-    title: 'Dataport — Hausmesse Recap',
-    category: 'interviews',
-    year: '2025',
-    role: { de: 'Kamera · Postproduktion', en: 'Camera · Post' },
-    description: {
-      de: 'Recap der Dataport-Hausmesse.',
-      en: 'Recap of the Dataport in-house expo.',
-    },
-    video: { type: 'drive', id: '1wou9Px-6CCWyXGUXPecRc28RrrmccQfC' },
-    thumbnail: '/thumbs/dataport-hausmesse-recap.jpg',
-  },
 
   // ── Visuelle Arbeiten (Drive: "Visuelle Arbeit", 2) ──
   {
