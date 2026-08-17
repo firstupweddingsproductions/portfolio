@@ -247,6 +247,26 @@ export const PROJECTS: Project[] = [
     thumbnail: '/thumbs/mihan-fahrettin-henna-trailer.jpg',
   },
   {
+    slug: 'beyza-ahmed-standesamt',
+    title: 'First Up Weddings — Beyza Nur & Ahmed',
+    category: 'visuelle',
+    year: '2026',
+    role: { de: 'Fotografie · Paarshooting · Bildbearbeitung', en: 'Photography · Couple Shoot · Editing' },
+    description: {
+      de: 'Paarfotografie für First Up Weddings: Standesamt-Shooting von Beyza Nur & Ahmed. Aufnahme und Bildbearbeitung in Eigenregie.',
+      en: 'Couple photography for First Up Weddings: registry-office shoot of Beyza Nur & Ahmed. Shot and edited by me.',
+    },
+    video: { type: 'none' },
+    gallery: [
+      '/gallery/beyza-ahmed/01.jpg',
+      '/gallery/beyza-ahmed/02.jpg',
+      '/gallery/beyza-ahmed/03.jpg',
+      '/gallery/beyza-ahmed/04.jpg',
+      '/gallery/beyza-ahmed/05.jpg',
+    ],
+    thumbnail: '/thumbs/beyza-ahmed.jpg',
+  },
+  {
     slug: 'a-second-life-trailer',
     title: 'A Second Life — Trailer',
     category: 'visuelle',
