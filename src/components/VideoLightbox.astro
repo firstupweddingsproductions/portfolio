@@ -10,6 +10,7 @@ const closeLabel = t(lang, 'lightbox.close');
 const soonText = lang === 'en' ? 'Preview coming soon.' : 'Vorschau folgt in Kürze.';
 const downloadLabel = lang === 'en' ? 'Download project folder' : 'Projektordner herunterladen';
 const watchLabel = lang === 'en' ? 'Play video ↗' : 'Video abspielen ↗';
+const linkLabel = lang === 'en' ? 'View on Instagram ↗' : 'Auf Instagram ansehen ↗';
 const tabVideo = 'Video';
 const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
 ---
@@ -99,6 +100,16 @@ const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" /></svg>
         {downloadLabel}
       </a>
+      <a
+        id="lb-link"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        class="mt-4 hidden items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-amber-bright"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8" /></svg>
+        {linkLabel}
+      </a>
     </div>
   </div>
 </div>
@@ -118,6 +129,7 @@ const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
   const elMeta = document.getElementById('lb-meta');
   const elDesc = document.getElementById('lb-desc');
   const elDownload = document.getElementById('lb-download') as HTMLAnchorElement | null;
+  const elLink = document.getElementById('lb-link') as HTMLAnchorElement | null;
   const mobileWatch = document.getElementById('lb-mobile-watch') as HTMLAnchorElement | null;
 
   let gallery: string[] = [];
@@ -191,6 +203,14 @@ const tabPhotos = lang === 'en' ? 'Photos' : 'Fotos';
       elDownload.classList.toggle('hidden', !dl);
       elDownload.classList.toggle('inline-flex', !!dl);
       if (dl) elDownload.href = dl;
+    }
+
+    // External link button (e.g. the Instagram account for a social-media project).
+    const lk = el.getAttribute('data-link');
+    if (elLink) {
+      elLink.classList.toggle('hidden', !lk);
+      elLink.classList.toggle('inline-flex', !!lk);
+      if (lk) elLink.href = lk;
     }
 
     // panes

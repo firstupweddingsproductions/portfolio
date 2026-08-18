@@ -49,6 +49,7 @@ const attrs = isAnchor
       ...(hasGallery ? { 'data-gallery': JSON.stringify(project.gallery) } : {}),
       ...(videoType !== 'none' ? { 'data-video-type': videoType, 'data-video-id': videoId } : {}),
       ...(project.download ? { 'data-download': project.download } : {}),
+      ...(project.link ? { 'data-link': project.link } : {}),
       ...common,
     };
 ---
@@ -114,7 +115,7 @@ const attrs = isAnchor
     <!-- Title + role -->
     <div class="min-w-0 flex-1">
       <h3 class="font-heading text-lg font-semibold leading-tight text-paper transition-colors [overflow-wrap:anywhere] group-hover:text-amber-bright sm:text-2xl">
-        {project.title}{isExternal ? ' ↗' : ''}
+        {project.title}{isAnchor ? ' ↗' : ''}
       </h3>
       <p class="mt-1.5 text-sm text-fog">{role}</p>
     </div>
