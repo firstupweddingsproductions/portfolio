@@ -267,6 +267,27 @@ export const PROJECTS: Project[] = [
     thumbnail: '/thumbs/beyza-ahmed.jpg',
   },
   {
+    slug: 'holsatia-aura',
+    title: 'NDTSV Holsatia Kiel — Sportfotografie',
+    category: 'visuelle',
+    year: '2025/2026',
+    role: { de: 'Fotografie · Matchday · Spielerporträts', en: 'Photography · Matchday · Player Portraits' },
+    description: {
+      de: 'Sport- und Matchday-Fotografie für den NDTSV Holsatia Kiel: Spielerporträts und Spielsituationen, aufgenommen und bearbeitet in Eigenregie.',
+      en: 'Sports and matchday photography for NDTSV Holsatia Kiel: player portraits and match moments, shot and edited by me.',
+    },
+    video: { type: 'none' },
+    gallery: [
+      '/gallery/holsatia-aura/01.jpg',
+      '/gallery/holsatia-aura/02.jpg',
+      '/gallery/holsatia-aura/03.jpg',
+      '/gallery/holsatia-aura/04.jpg',
+      '/gallery/holsatia-aura/05.jpg',
+      '/gallery/holsatia-aura/06.jpg',
+    ],
+    thumbnail: '/thumbs/holsatia-aura.jpg',
+  },
+  {
     slug: 'a-second-life-trailer',
     title: 'A Second Life — Trailer',
     category: 'visuelle',
