@@ -392,10 +392,10 @@ export const PROJECTS: Project[] = [
     year: '2024/2025',
     role: { de: 'Game Design · VR · 3D', en: 'Game Design · VR · 3D' },
     description: {
-      de: 'Interaktives VR-Spielprojekt „OdysseyThroughTime" aus dem Studium — Konzeption, 3D-Umgebung und Interaktionsdesign. Den Projektordner kannst du herunterladen; ein Gameplay-Video folgt.',
-      en: 'Interactive VR game project “OdysseyThroughTime” from university — concept, 3D environment and interaction design. The project folder is available to download; a gameplay video is coming.',
+      de: 'Interaktives VR-Spielprojekt „OdysseyThroughTime" aus dem Studium: Konzeption, 3D-Umgebung und Interaktionsdesign. Gameplay im Video, den Projektordner kannst du zusätzlich herunterladen.',
+      en: 'Interactive VR game project “OdysseyThroughTime” from university: concept, 3D environment and interaction design. Gameplay in the video, with the project folder also available to download.',
     },
-    video: { type: 'none' }, // TODO: Video-Link nachtragen → { type: 'vimeo'|'drive', id: '...' }
+    video: { type: 'drive', id: '1kbWDEr61jzGNoUi5awT_jPOTMiXsWIu3' },
     download: 'https://drive.google.com/drive/folders/1KJPEub7iO8Xh9AsG0fb8fpIWM8UbpalL?usp=sharing',
     thumbnail: '/thumbs/vr-spielprojekt.jpg',
     thumbnailContain: true,
