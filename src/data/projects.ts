@@ -77,7 +77,7 @@ export type VideoSource =
 
 export interface Project {
   slug: string;
-  title: string;
+  title: { de: string; en: string };
   category: CategoryKey;
   year: string;
   featured?: boolean;
@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
   // ── Kurzfilm (Drive: "Kurzfilme", 2) ──
   {
     slug: 'glow-horror-kurzfilm',
-    title: 'Glow — Horror-Kurzfilm',
+    title: { de: 'Glow — Horror-Kurzfilm', en: 'Glow — Horror Short' },
     category: 'film',
     year: '2026',
     featured: true,
@@ -116,7 +116,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'nachdreh-spur-des-falken',
-    title: 'Nachdreh: "Die Spur des Falken" (1941)',
+    title: { de: 'Nachdreh: "Die Spur des Falken" (1941)', en: 'Re-shoot: "The Maltese Falcon" (1941)' },
     category: 'film',
     year: '2023',
     role: { de: 'Studienprojekt · Kamera · Regie · Postproduktion', en: 'Student project · Camera · Directing · Post' },
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
   // ── Corporate (Drive: "Corporate", 4) ──
   {
     slug: 'dataport-produktvorstellung',
-    title: 'Dataport — Produktvorstellung',
+    title: { de: 'Dataport — Produktvorstellung', en: 'Dataport — Product Presentation' },
     category: 'corporate',
     year: '2026',
     featured: true,
@@ -145,7 +145,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'dataport-produktguide',
-    title: 'Dataport — Produktguide',
+    title: { de: 'Dataport — Produktguide', en: 'Dataport — Product Guide' },
     category: 'corporate',
     year: '2026',
     role: { de: 'Konzeption · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
@@ -158,7 +158,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'dataport-produktguide-2',
-    title: 'Dataport — Produktguide 2',
+    title: { de: 'Dataport — Produktguide 2', en: 'Dataport — Product Guide 2' },
     category: 'corporate',
     year: '2026',
     role: { de: 'Konzeption · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
@@ -173,7 +173,7 @@ export const PROJECTS: Project[] = [
   // ── Interviews & Events (Drive: "Interviews / Event Recaps", 3) ──
   {
     slug: 'dataport-bereichsmeeting-recap',
-    title: 'Dataport — Bereichsmeeting Recap',
+    title: { de: 'Dataport — Bereichsmeeting Recap', en: 'Dataport — Divisional Meeting Recap' },
     category: 'interviews',
     year: '2025',
     featured: true,
@@ -187,7 +187,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'dataport-interview-blog',
-    title: 'Dataport — Interview Blog',
+    title: { de: 'Dataport — Interview Blog', en: 'Dataport — Interview Blog' },
     category: 'interviews',
     year: '2025',
     role: { de: 'Konzept · Kamera · Postproduktion', en: 'Concept · Camera · Post' },
@@ -202,7 +202,7 @@ export const PROJECTS: Project[] = [
   // ── Visuelle Arbeiten (Drive: "Visuelle Arbeit", 2) ──
   {
     slug: 'verlobung-trailer-ilayda-emin',
-    title: 'First Up Weddings — Ilayda & Emin Can',
+    title: { de: 'First Up Weddings — Ilayda & Emin Can', en: 'First Up Weddings — Ilayda & Emin Can' },
     category: 'visuelle',
     year: '2026',
     featured: true,
@@ -216,7 +216,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'mustafa-yaren-verlobungstrailer',
-    title: 'First Up Weddings — Mustafa & Yaren',
+    title: { de: 'First Up Weddings — Mustafa & Yaren', en: 'First Up Weddings — Mustafa & Yaren' },
     category: 'visuelle',
     year: '2026',
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
@@ -235,7 +235,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'mihan-fahrettin-henna-trailer',
-    title: 'First Up Weddings — Mihan & Fahrettin',
+    title: { de: 'First Up Weddings — Mihan & Fahrettin', en: 'First Up Weddings — Mihan & Fahrettin' },
     category: 'visuelle',
     year: '2026',
     role: { de: 'Henna-Trailer · Kamera · Schnitt · Farblook', en: 'Henna Trailer · Camera · Edit · Color' },
@@ -248,7 +248,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'beyza-ahmed-standesamt',
-    title: 'First Up Weddings — Beyza Nur & Ahmed',
+    title: { de: 'First Up Weddings — Beyza Nur & Ahmed', en: 'First Up Weddings — Beyza Nur & Ahmed' },
     category: 'visuelle',
     year: '2026',
     role: { de: 'Fotografie · Paarshooting · Bildbearbeitung', en: 'Photography · Couple Shoot · Editing' },
@@ -268,7 +268,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'holsatia-aura',
-    title: 'NDTSV Holsatia Kiel — Sportfotografie',
+    title: { de: 'NDTSV Holsatia Kiel — Sportfotografie', en: 'NDTSV Holsatia Kiel — Sports Photography' },
     category: 'visuelle',
     year: '2025/2026',
     role: { de: 'Fotografie · Matchday · Spielerporträts', en: 'Photography · Matchday · Player Portraits' },
@@ -289,7 +289,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'a-second-life-trailer',
-    title: 'A Second Life — Trailer',
+    title: { de: 'A Second Life — Trailer', en: 'A Second Life — Trailer' },
     category: 'visuelle',
     year: '2024',
     role: { de: 'Postproduktion', en: 'Post-production' },
@@ -304,7 +304,7 @@ export const PROJECTS: Project[] = [
   // ── Weiteres (web / study / off-niche) ──
   {
     slug: 'first-up-weddings',
-    title: 'First Up Weddings',
+    title: { de: 'First Up Weddings', en: 'First Up Weddings' },
     category: 'weiteres',
     year: '2026',
     role: { de: 'Eigene Marke · Konzept · Design · Web', en: 'Own brand · Concept · Design · Web' },
@@ -320,7 +320,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'first-up-productions',
-    title: 'First Up Productions',
+    title: { de: 'First Up Productions', en: 'First Up Productions' },
     category: 'weiteres',
     year: '2026',
     role: { de: 'Eigene Marke · Konzept · Design · Web', en: 'Own brand · Concept · Design · Web' },
@@ -336,7 +336,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'holsatia-kiel',
-    title: 'NDTSV Holsatia Kiel — Social Media',
+    title: { de: 'NDTSV Holsatia Kiel — Social Media', en: 'NDTSV Holsatia Kiel — Social Media' },
     category: 'weiteres',
     year: '2025/2026',
     role: { de: 'Social Media · Grafik · Foto · Video', en: 'Social Media · Graphics · Photo · Video' },
@@ -360,7 +360,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'smart-blindenstock',
-    title: 'Smarter Blindenstock (3D-Druck)',
+    title: { de: 'Smarter Blindenstock (3D-Druck)', en: 'Smart White Cane (3D Print)' },
     category: 'weiteres',
     year: '2025',
     role: { de: '3D-Druck · Programmierung · Sensorik', en: '3D Printing · Programming · Sensors' },
@@ -387,7 +387,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'vr-spielprojekt',
-    title: 'VR-Spielprojekt — OdysseyThroughTime',
+    title: { de: 'VR-Spielprojekt — OdysseyThroughTime', en: 'VR Game Project — OdysseyThroughTime' },
     category: 'weiteres',
     year: '2024/2025',
     role: { de: 'Game Design · VR · 3D', en: 'Game Design · VR · 3D' },
@@ -403,7 +403,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'bachelorthesis-dune',
-    title: 'Bachelorthesis — Set-Design in Dune (2021) und Dune: Part Two (2024)',
+    title: { de: 'Bachelorthesis — Set-Design in Dune (2021) und Dune: Part Two (2024)', en: "Bachelor's Thesis — Set Design in Dune (2021) and Dune: Part Two (2024)" },
     category: 'weiteres',
     year: '2025/2026',
     role: { de: 'Forschung · Analyse', en: 'Research · Analysis' },

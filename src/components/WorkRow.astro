@@ -7,6 +7,7 @@ interface Props {
 const { project, lang } = Astro.props;
 
 const role = project.role[lang];
+const title = project.title[lang];
 const cat = getCategory(project.category);
 const catName = cat ? catLabel(cat, lang) : project.category;
 
@@ -23,7 +24,7 @@ const kind = videoType !== 'none' ? 'video' : hasGallery ? 'gallery' : isPdf ? '
 const contain = !!project.thumbnailContain;
 
 const initials =
-  project.title
+  title
     .replace(/[^A-Za-zÄÖÜäöü0-9 ]/g, ' ')
     .split(/\s+/)
     .filter(Boolean)
@@ -33,7 +34,7 @@ const initials =
     .toUpperCase() || 'AK';
 
 const common = {
-  'data-title': project.title,
+  'data-title': title,
   'data-role': role,
   'data-year': project.year,
   'data-cat': catName,
@@ -71,7 +72,7 @@ const attrs = isAnchor
         project.thumbnail ? (
           <img
             src={project.thumbnail}
-            alt={project.title}
+            alt={title}
             loading="lazy"
             class={
               contain
@@ -115,7 +116,7 @@ const attrs = isAnchor
     <!-- Title + role -->
     <div class="min-w-0 flex-1">
       <h3 class="font-heading text-lg font-semibold leading-tight text-paper transition-colors [overflow-wrap:anywhere] group-hover:text-amber-bright sm:text-2xl">
-        {project.title}{isAnchor ? ' ↗' : ''}
+        {title}{isAnchor ? ' ↗' : ''}
       </h3>
       <p class="mt-1.5 text-sm text-fog">{role}</p>
     </div>
