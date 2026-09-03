@@ -247,6 +247,20 @@ export const PROJECTS: Project[] = [
     thumbnail: '/thumbs/mihan-fahrettin-henna-trailer.jpg',
   },
   {
+    slug: 'pelda-samet-verlobungstrailer',
+    title: { de: 'First Up Weddings — Pelda & Samet', en: 'First Up Weddings — Pelda & Samet' },
+    category: 'visuelle',
+    year: '2026',
+    featured: true,
+    role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
+    description: {
+      de: 'Cinematischer Verlobungstrailer für First Up Weddings, meine eigene Hochzeitsfilm-Marke. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
+      en: 'Cinematic engagement trailer for First Up Weddings, my own wedding-film brand. Beyond the trailers I also produce longer highlight videos and more.',
+    },
+    video: { type: 'drive', id: '1pNACGndj5XwP01GgIinLPU3iTlB6Kgee' },
+    thumbnail: '/thumbs/pelda-samet.jpg',
+  },
+  {
     slug: 'beyza-ahmed-standesamt',
     title: { de: 'First Up Weddings — Beyza Nur & Ahmed', en: 'First Up Weddings — Beyza Nur & Ahmed' },
     category: 'visuelle',
