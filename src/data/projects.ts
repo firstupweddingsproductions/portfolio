@@ -153,7 +153,7 @@ export const PROJECTS: Project[] = [
       de: 'Produktguide-Video für Dataport.',
       en: 'Product guide video for Dataport.',
     },
-    video: { type: 'drive', id: '1d6EVb6CEJCh2kX3fqNzDwiMTippJjoh3' },
+    video: { type: 'drive', id: '1UyO3cDednqvF5fdfu9UFvMeRtJlM7I4L' },
     thumbnail: '/thumbs/dataport-produktguide.jpg',
   },
   {
