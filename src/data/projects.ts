@@ -205,6 +205,7 @@ export const PROJECTS: Project[] = [
     title: { de: 'First Up Weddings — Ilayda & Emin Can', en: 'First Up Weddings — Ilayda & Emin Can' },
     category: 'visuelle',
     year: '2026',
+    featured: true,
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
       de: 'Cinematischer Verlobungstrailer für First Up Weddings, meine eigene Hochzeitsfilm-Marke. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
@@ -245,7 +246,6 @@ export const PROJECTS: Project[] = [
     title: { de: 'First Up Weddings — Pelda & Samet', en: 'First Up Weddings — Pelda & Samet' },
     category: 'visuelle',
     year: '2026',
-    featured: true,
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
       de: 'Cinematischer Verlobungstrailer für First Up Weddings, meine eigene Hochzeitsfilm-Marke. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
