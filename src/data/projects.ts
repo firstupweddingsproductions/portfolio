@@ -205,7 +205,6 @@ export const PROJECTS: Project[] = [
     title: { de: 'First Up Weddings — Ilayda & Emin Can', en: 'First Up Weddings — Ilayda & Emin Can' },
     category: 'visuelle',
     year: '2026',
-    featured: true,
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
       de: 'Cinematischer Verlobungstrailer für First Up Weddings, meine eigene Hochzeitsfilm-Marke. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
@@ -219,6 +218,7 @@ export const PROJECTS: Project[] = [
     title: { de: 'First Up Weddings — Mustafa & Yaren', en: 'First Up Weddings — Mustafa & Yaren' },
     category: 'visuelle',
     year: '2026',
+    featured: true,
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
       de: 'Cinematischer Verlobungstrailer für First Up Weddings. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
@@ -226,12 +226,6 @@ export const PROJECTS: Project[] = [
     },
     video: { type: 'drive', id: '1qq8oppPlGpR9tbMOvMXBiz3FskJ3LO6l' },
     thumbnail: '/thumbs/mustafa-yaren-verlobungstrailer.jpg',
-    gallery: [
-      '/gallery/mustafa-yaren/01.jpg',
-      '/gallery/mustafa-yaren/02.jpg',
-      '/gallery/mustafa-yaren/03.jpg',
-      '/gallery/mustafa-yaren/04.jpg',
-    ],
   },
   {
     slug: 'mihan-fahrettin-henna-trailer',
