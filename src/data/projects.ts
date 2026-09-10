@@ -251,7 +251,7 @@ export const PROJECTS: Project[] = [
       de: 'Cinematischer Verlobungstrailer für First Up Weddings, meine eigene Hochzeitsfilm-Marke. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
       en: 'Cinematic engagement trailer for First Up Weddings, my own wedding-film brand. Beyond the trailers I also produce longer highlight videos and more.',
     },
-    video: { type: 'drive', id: '1pNACGndj5XwP01GgIinLPU3iTlB6Kgee' },
+    video: { type: 'drive', id: '1XOfxnD53PXJ4o_he0W_FTcAiITlTMvzx' },
     thumbnail: '/thumbs/pelda-samet.jpg',
   },
   {
