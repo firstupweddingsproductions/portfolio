@@ -114,19 +114,6 @@ export const PROJECTS: Project[] = [
     video: { type: 'drive', id: '12BJ6MXDBx1GffQm6svH7jz60543XVGUm' },
     thumbnail: '/thumbs/glow-horror-kurzfilm.jpg',
   },
-  {
-    slug: 'nachdreh-spur-des-falken',
-    title: { de: 'Nachdreh: "Die Spur des Falken" (1941)', en: 'Re-shoot: "The Maltese Falcon" (1941)' },
-    category: 'film',
-    year: '2023',
-    role: { de: 'Studienprojekt · Kamera · Regie · Postproduktion', en: 'Student project · Camera · Directing · Post' },
-    description: {
-      de: 'Studentische Übung / Hommage (nicht-kommerziell): Nachdreh einer Szene aus „Die Spur des Falken" (1941).',
-      en: 'Student exercise / homage (non-commercial): re-shoot of a scene from “The Maltese Falcon” (1941).',
-    },
-    video: { type: 'drive', id: '1XeZqIZldnDd0p6TU_KutQ8wtVT8bV3WD' },
-    thumbnail: '/thumbs/nachdreh-spur-des-falken.jpg',
-  },
 
   // ── Corporate (Drive: "Corporate", 4) ──
   {
