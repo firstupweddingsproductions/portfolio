@@ -233,6 +233,7 @@ export const PROJECTS: Project[] = [
     title: { de: 'First Up Weddings — Pelda & Samet', en: 'First Up Weddings — Pelda & Samet' },
     category: 'visuelle',
     year: '2026',
+    featured: true,
     role: { de: 'Verlobungstrailer · Kamera · Schnitt · Farblook', en: 'Engagement Trailer · Camera · Edit · Color' },
     description: {
       de: 'Cinematischer Verlobungstrailer für First Up Weddings, meine eigene Hochzeitsfilm-Marke. Neben den Trailern entstehen auch längere Highlight-Videos und weitere Formate.',
@@ -260,6 +261,20 @@ export const PROJECTS: Project[] = [
       '/gallery/beyza-ahmed/05.jpg',
     ],
     thumbnail: '/thumbs/beyza-ahmed.jpg',
+  },
+  {
+    slug: 'holsatia-trikotreveal',
+    title: { de: 'NDTSV Holsatia Kiel — Trikotreveal', en: 'NDTSV Holsatia Kiel — Jersey Reveal' },
+    category: 'visuelle',
+    year: '2026',
+    featured: true,
+    role: { de: 'Konzept · Skript · Kamera · Schnitt', en: 'Concept · Script · Camera · Edit' },
+    description: {
+      de: 'Trikot-Reveal für den NDTSV Holsatia Kiel. Konzept, Skript, Kamera und Schnitt komplett in Eigenregie.',
+      en: 'Jersey reveal for NDTSV Holsatia Kiel. Concept, script, camera and edit entirely by me.',
+    },
+    video: { type: 'drive', id: '1HFAv7gEyTpC7kDsS4kKDOgrr9fBls8Us' },
+    thumbnail: '/thumbs/holsatia-trikotreveal.jpg',
   },
   {
     slug: 'holsatia-aura',
