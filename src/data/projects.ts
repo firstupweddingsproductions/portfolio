@@ -314,8 +314,6 @@ export const PROJECTS: Project[] = [
       '/gallery/holsatia-matchday/03.jpg',
     ],
     thumbnail: '/thumbs/holsatia-matchday.jpg',
-    thumbnailContain: true,
-    thumbnailBg: '#282828',
   },
   {
     slug: 'muanh-counterglow-konzert',
